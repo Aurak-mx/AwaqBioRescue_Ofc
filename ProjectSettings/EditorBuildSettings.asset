@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Project/Minigames/MinigameMarcelo/Scenes/MainMenu.unity
+    guid: fe306464465bd48cba14e3ebd8494091
+  - enabled: 1
+    path: Assets/_Project/Minigames/MinigameMarcelo/Scenes/MainGamesMenu.unity
+    guid: 3a270a3c5b28f4b39990679f7d8979d5
+  - enabled: 1
+    path: Assets/_Project/Minigames/MinigameMarcelo/Scenes/Game5.unity
+    guid: 02081f691f4644d678abb46fcc9c3d51
+  - enabled: 1
+    path: Assets/_Project/Minigames/MinigameLuis/Scenes/Game4.unity
+    guid: 35d9ca20e51c3445f892896f34a2fbe1
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0
