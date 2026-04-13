@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: e5e6fb0e7eeb5434ea1071bc5e8d8170
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5708518768438691812
+    second: Cocodrilo nadando en estilo pixel art_0
+  - first:
+      213: -1128762043534756494
+    second: Cocodrilo nadando en estilo pixel art_1
+  - first:
+      213: 5829201023471787492
+    second: Cocodrilo nadando en estilo pixel art_2
+  - first:
+      213: -374984302045687442
+    second: Cocodrilo nadando en estilo pixel art_3
+  - first:
+      213: 4655667395074487727
+    second: Cocodrilo nadando en estilo pixel art_4
+  - first:
+      213: 5059723704338295077
+    second: Cocodrilo nadando en estilo pixel art_5
+  - first:
+      213: -3580181842599560139
+    second: Cocodrilo nadando en estilo pixel art_6
+  - first:
+      213: 2660354718831620698
+    second: Cocodrilo nadando en estilo pixel art_7
+  - first:
+      213: -2770476410150566888
+    second: Cocodrilo nadando en estilo pixel art_8
+  - first:
+      213: 9067536550541065160
+    second: Cocodrilo nadando en estilo pixel art_9
+  - first:
+      213: -350629086971396904
+    second: Cocodrilo nadando en estilo pixel art_10
+  - first:
+      213: 7750772263541345832
+    second: Cocodrilo nadando en estilo pixel art_11
+  - first:
+      213: 1610505340613523262
+    second: Cocodrilo nadando en estilo pixel art_12
+  - first:
+      213: -4076740380927725197
+    second: Cocodrilo nadando en estilo pixel art_13
+  - first:
+      213: 4426830293090349396
+    second: Cocodrilo nadando en estilo pixel art_14
+  - first:
+      213: 4517544890334567430
+    second: Cocodrilo nadando en estilo pixel art_15
+  - first:
+      213: -2234229774506739081
+    second: Cocodrilo nadando en estilo pixel art_16
+  - first:
+      213: -3071874016969200554
+    second: Cocodrilo nadando en estilo pixel art_17
+  - first:
+      213: 3396746138349666093
+    second: Cocodrilo nadando en estilo pixel art_18
+  - first:
+      213: -4111862024016221978
+    second: Cocodrilo nadando en estilo pixel art_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 765
+        width: 453
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18bf85dc6447c0b0800000000000000
+      internalID: -5708518768438691812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 11
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 767
+        width: 471
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8144062326a4d89d0800000000000000
+      internalID: -2770476410150566888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocodrilo nadando en estilo pixel art_10
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 759
+        width: 371
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc762ff3b0522bf0800000000000000
+      internalID: -350629086971396904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 528
+        width: 480
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e055fee46409b60800000000000000
+      internalID: 7750772263541345832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocodrilo nadando en estilo pixel art_12
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 523
+        width: 368
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e377320131aa95610800000000000000
+      internalID: 1610505340613523262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 22
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 542
+        width: 469
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371ff4919328c67c0800000000000000
+      internalID: -4076740380927725197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 317
+        width: 466
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451b69c72b24f6d30800000000000000
+      internalID: 4426830293090349396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocodrilo nadando en estilo pixel art_15
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 317
+        width: 341
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60cd54d842b81be30800000000000000
+      internalID: 4517544890334567430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 33
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 330
+        width: 469
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77abce78bdb6ef0e0800000000000000
+      internalID: -2234229774506739081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 99
+        width: 433
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65c6cc76bd28e55d0800000000000000
+      internalID: -3071874016969200554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocodrilo nadando en estilo pixel art_18
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 99
+        width: 338
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ff288bd9aa32f20800000000000000
+      internalID: 3396746138349666093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 44
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 108
+        width: 469
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e82815564bbfe6c0800000000000000
+      internalID: -4111862024016221978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 17712ccf624b643f999afb9f1a199202
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      1: -5708518768438691812
+      11: -2770476410150566888
+      2: 7750772263541345832
+      22: -4076740380927725197
+      3: 4426830293090349396
+      33: -2234229774506739081
+      4: -3071874016969200554
+      44: -4111862024016221978
+      Cocodrilo nadando en estilo pixel art_0: 1104157618
+      Cocodrilo nadando en estilo pixel art_1: -1128762043534756494
+      Cocodrilo nadando en estilo pixel art_10: -350629086971396904
+      Cocodrilo nadando en estilo pixel art_12: 1610505340613523262
+      Cocodrilo nadando en estilo pixel art_15: 4517544890334567430
+      Cocodrilo nadando en estilo pixel art_18: 3396746138349666093
+      Cocodrilo nadando en estilo pixel art_2: 5829201023471787492
+      Cocodrilo nadando en estilo pixel art_20: -447816730
+      Cocodrilo nadando en estilo pixel art_3: -374984302045687442
+      Cocodrilo nadando en estilo pixel art_4: 4655667395074487727
+      Cocodrilo nadando en estilo pixel art_5: 5059723704338295077
+      Cocodrilo nadando en estilo pixel art_6: -3580181842599560139
+      Cocodrilo nadando en estilo pixel art_7: 2660354718831620698
+      Cocodrilo nadando en estilo pixel art_9: 9067536550541065160
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
