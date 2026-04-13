@@ -31,7 +31,12 @@ public class Juan_PlataformaMovil : MonoBehaviour
         {
             if (collision.transform == playerActual)
             {
+                // Desvincular al jugador de la plataforma
                 collision.transform.SetParent(null);
+
+                // Reiniciar rotación al salir de la plataforma
+                collision.transform.rotation = Quaternion.identity;
+
                 playerActual = null;
             }
         }
