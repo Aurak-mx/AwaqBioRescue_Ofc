@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Juan_UIController : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    public Image barraTiempo;
     public Sprite vidaGastada;
     public Image[] vidasImagenes;
     int vidas = 3;
@@ -18,11 +18,8 @@ public class Juan_UIController : MonoBehaviour
     {
         tiempo = Juan_GameControl.Instance.tiempoJuego;
         vidas = PlayerPrefs.GetInt("Vidas");
-        TextoActivo();
-    }
-    public void TextoActivo()
-    {
-        timerText.text = tiempo.ToString();
+
+        barraTiempo.fillAmount = 1f; // empieza llena
     }
     public void StartTimer()
     {
@@ -45,11 +42,18 @@ public class Juan_UIController : MonoBehaviour
             }
         }
     }
+
     IEnumerator MatchTime()
     {
         yield return new WaitForSeconds(1);
+
         tiempo--;
-        TextoActivo();
+
+        float minFill = 0.238f;
+        float porcentaje = (float)tiempo / Juan_GameControl.Instance.tiempoJuego;
+
+        barraTiempo.fillAmount = minFill + (porcentaje * (1f - minFill));
+
         if (tiempo == 0)
         {
             SceneManager.LoadScene("CocodrileGameScene");
