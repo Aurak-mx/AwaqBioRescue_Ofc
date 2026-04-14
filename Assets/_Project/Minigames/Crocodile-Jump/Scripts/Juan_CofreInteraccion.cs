@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class Juan_CofreInteraccion : MonoBehaviour
 {
     public GameObject mensajeE;
     public GameObject panelPregunta;
 
+    public Animator animator;
     public Juan_PregunaUI preguntaUI;
 
     [Header("Configuración de Pregunta")]
@@ -21,18 +23,29 @@ public class Juan_CofreInteraccion : MonoBehaviour
     {
         if (playerCerca && Input.GetKeyDown(KeyCode.E) && !abierto)
         {
-            AbrirCofre();
+            StartCoroutine(AbrirCofre());
         }
     }
 
-    void AbrirCofre()
+    IEnumerator AbrirCofre()
     {
         abierto = true;
 
         mensajeE.SetActive(false);
+
+        // 🎬 Animación
+        if (animator != null)
+            animator.SetBool("Abrir", true);
+
+        // ⏱️ Esperar animación (ajusta tiempo)
+        yield return new WaitForSeconds(1f);
+
+        // 🧠 Mostrar pregunta
         panelPregunta.SetActive(true);
 
-        // 🔥 Mandar pregunta + callback
+        // 🧊 Pausar juego
+        Time.timeScale = 0f;
+
         preguntaUI.SetPregunta(pregunta, respuestas, respuestaCorrecta, ResultadoPregunta);
 
         Debug.Log("Cofre abierto");
@@ -43,15 +56,10 @@ public class Juan_CofreInteraccion : MonoBehaviour
         if (correcta)
         {
             Debug.Log("🎁 Recompensa");
-            // Aquí puedes:
-            // - Dar monedas
-            // - Abrir animación
-            // - Sumar puntos
         }
         else
         {
             Debug.Log("❌ Fallaste");
-            // Castigo opcional
         }
     }
 

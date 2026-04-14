@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 
 public class Juan_PregunaUI : MonoBehaviour
 {
@@ -75,11 +76,18 @@ public class Juan_PregunaUI : MonoBehaviour
         onRespuesta?.Invoke(esCorrecta);
 
         // ⏱️ Cerrar después de un momento
-        Invoke(nameof(CerrarPanel), 1.5f);
+        StartCoroutine(CerrarConDelay());
+    }
+
+    IEnumerator CerrarConDelay()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        CerrarPanel();
     }
 
     void CerrarPanel()
     {
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
