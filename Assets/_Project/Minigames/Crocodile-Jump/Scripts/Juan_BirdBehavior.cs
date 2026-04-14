@@ -17,7 +17,7 @@ public class Juan_BirdBehavior : MonoBehaviour
     {
         this.transform.position += Vector3.left * Time.deltaTime * velocidad;
 
-        if (this.transform.position.x < -50)
+        if (this.transform.position.x < -200)
         {
             GameObject.Destroy(this.gameObject);
         }
