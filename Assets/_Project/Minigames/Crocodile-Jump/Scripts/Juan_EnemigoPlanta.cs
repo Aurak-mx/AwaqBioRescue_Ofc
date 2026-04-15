@@ -52,7 +52,7 @@ public class Juan_EnemigoPlanta : MonoBehaviour
 
             if (distanciaAlJugador <= rangoAtaque)
             {
-                Juan_GameControl.Instance.PerderVida();
+                Juan_GameControl.Instance.Daño();
             }
         }
         else

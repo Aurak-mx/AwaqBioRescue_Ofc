@@ -11,7 +11,7 @@ public class Juan_BirdBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameObject.Destroy(this.gameObject);
-            Juan_GameControl.Instance.PerderVida();
+            Juan_GameControl.Instance.Daño();
         }
     }
 

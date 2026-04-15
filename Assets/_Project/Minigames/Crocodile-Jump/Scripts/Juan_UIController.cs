@@ -29,10 +29,12 @@ public class Juan_UIController : MonoBehaviour
     }
     public void StartTimer()
     {
-        if (timerCoroutine == null)
+        if (timerCoroutine != null)
         {
-            timerCoroutine = StartCoroutine(MatchTime());
+            StopCoroutine(timerCoroutine); // 💥 IMPORTANTE
         }
+
+        timerCoroutine = StartCoroutine(MatchTime());
     }
 
     public void UpdateVidas()
@@ -108,7 +110,7 @@ public class Juan_UIController : MonoBehaviour
     public void ReiniciarBtn()
     {
         Time.timeScale = 1f;
-        Juan_GameControl.Instance.puntos = 0;
+        Juan_GameControl.Instance.ResetearJuego();
         SceneManager.LoadScene("CocodrileGameScene");
     }
     public void IrHomeBtn()
@@ -119,6 +121,15 @@ public class Juan_UIController : MonoBehaviour
     public void IrInstrucciones()
     {
         Time.timeScale = 1f;
+
+        if (Juan_GameControl.Instance != null)
+        {
+            Juan_GameControl.Instance.invencible = false;
+            Juan_GameControl.Instance.puntos = 0;
+            vidas = 3;
+            Juan_GameControl.Instance.StopAllCoroutines(); // 🔥 clave
+        }
+
         SceneManager.LoadScene("Juan_Instrucciones");
     }
 }

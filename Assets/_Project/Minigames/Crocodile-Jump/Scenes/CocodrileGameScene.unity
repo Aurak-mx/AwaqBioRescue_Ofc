@@ -28734,9 +28734,8 @@ MonoBehaviour:
   UIController: {fileID: 1637553172}
   sfxManager: {fileID: 1895795718}
   playerSprite: {fileID: 963827373}
-  estaPerdiendoVida: 0
-  "cooldownDa\xF1o": 1.5
   puntos: 0
+  invencible: 0
 --- !u!4 &1039230474
 Transform:
   m_ObjectHideFlags: 0

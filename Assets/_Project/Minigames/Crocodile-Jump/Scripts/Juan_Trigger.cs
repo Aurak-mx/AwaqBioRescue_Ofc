@@ -11,7 +11,7 @@ public class Juan_Trigger : MonoBehaviour
             if (respawn != null)
             {
                 respawn.VolverAlPuntoSeguro();
-                Juan_GameControl.Instance.PerderVida();
+                Juan_GameControl.Instance.Daño();
             }
         }
     }

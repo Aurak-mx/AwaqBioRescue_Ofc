@@ -15,11 +15,18 @@ public class Juan_CofresManager : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
     }
 
     void Start()
     {
+        cofresAbiertos = 0;
         ActivarCofreAleatorio();
     }
 
@@ -63,5 +70,11 @@ public class Juan_CofresManager : MonoBehaviour
         {
             uiController.MostrarProgresoCofres(cofresAbiertos, totalCofres);
         }
+    }
+    public void ResetearCofres()
+    {
+        StopAllCoroutines();
+
+        ActivarCofreAleatorio();
     }
 }
