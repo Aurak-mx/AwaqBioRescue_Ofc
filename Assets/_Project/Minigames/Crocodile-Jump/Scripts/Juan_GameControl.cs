@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Juan_GameControl : MonoBehaviour
 {
+    [Header("Configuración")]
     public int tiempoJuego = 60;
     public static Juan_GameControl Instance;
     
@@ -16,6 +17,9 @@ public class Juan_GameControl : MonoBehaviour
     public bool estaPerdiendoVida = false;
     private float ultimoDaño = -10f;
     public float cooldownDaño = 1.5f;
+
+    [Header("Puntaje")]
+    public int puntos = 0;
 
     public void Awake()
     {
@@ -146,11 +150,36 @@ public class Juan_GameControl : MonoBehaviour
         Debug.Log("Fin de Invencibilidad");
     }
 
-    public void GameOver()
+   public void GameOver()
     {
         Debug.Log("Game Over");
+
         PlayerPrefs.SetInt("Vidas", 3);
-        estaPerdiendoVida = false; // <--- AGREGA ESTA LÍNEA
+
+        // 👇 RESET DE PUNTOS
+        puntos = 0;
+
+        if (UIController != null)
+        {
+            UIController.ActualizarPuntos(puntos);
+        }
+
+        estaPerdiendoVida = false;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SumarPuntos(int cantidad)
+    {
+        puntos += cantidad;
+
+        // Evitar negativos (opcional)
+        if (puntos < 0)
+            puntos = 0;
+
+        if (UIController != null)
+        {
+            UIController.ActualizarPuntos(puntos);
+        }
     }
 }

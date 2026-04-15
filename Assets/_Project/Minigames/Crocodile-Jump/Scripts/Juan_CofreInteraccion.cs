@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Juan_CofreInteraccion : MonoBehaviour
 {
+    
     public GameObject mensajeE;
     public GameObject panelPregunta;
 
@@ -61,11 +62,17 @@ public class Juan_CofreInteraccion : MonoBehaviour
     {
         if (correcta)
         {
-            Debug.Log("🎁 Recompensa");
+            if (Juan_GameControl.Instance != null)
+            {
+                Juan_GameControl.Instance.SumarPuntos(200);
+            }
         }
         else
         {
-            Debug.Log("❌ Fallaste");
+            if (Juan_GameControl.Instance != null)
+            {
+                Juan_GameControl.Instance.SumarPuntos(-50);
+            }
         }
     }
 
