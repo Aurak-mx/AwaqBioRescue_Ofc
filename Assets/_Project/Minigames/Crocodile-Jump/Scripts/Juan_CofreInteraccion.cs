@@ -37,8 +37,14 @@ public class Juan_CofreInteraccion : MonoBehaviour
         if (animator != null)
             animator.SetBool("Abrir", true);
 
-        // ⏱️ Esperar animación (ajusta tiempo)
+        // ⏱️ Esperar animación
         yield return new WaitForSeconds(1f);
+
+        // 👇 CONTAR COFRE AQUÍ (IMPORTANTE)
+        if (Juan_CofresManager.Instance != null)
+        {
+            Juan_CofresManager.Instance.CofreAbierto();
+        }
 
         // 🧠 Mostrar pregunta
         panelPregunta.SetActive(true);

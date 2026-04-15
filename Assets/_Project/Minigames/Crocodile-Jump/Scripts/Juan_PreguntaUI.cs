@@ -27,9 +27,8 @@ public class Juan_PregunaUI : MonoBehaviour
             // 🔄 Reset botón
             botones[i].interactable = true;
 
-            ColorBlock colors = botones[i].colors;
-            colors.normalColor = Color.white;
-            botones[i].colors = colors;
+            Image img = botones[i].GetComponent<Image>();
+            img.color = Color.white;
 
             // 📝 Asignar texto
             if (respuestas != null && i < respuestas.Length)
@@ -56,18 +55,16 @@ public class Juan_PregunaUI : MonoBehaviour
         // 🎨 Feedback visual
         for (int i = 0; i < botones.Length; i++)
         {
-            ColorBlock colors = botones[i].colors;
+            Image img = botones[i].GetComponent<Image>();
 
             if (i == respuestaCorrecta)
             {
-                colors.normalColor = Color.green;
+                img.color = Color.green; // correcta
             }
             else if (i == index)
             {
-                colors.normalColor = Color.red;
+                img.color = Color.red; // la que elegiste mal
             }
-
-            botones[i].colors = colors;
         }
 
         Debug.Log(esCorrecta ? "Correcto" : "Incorrecto");

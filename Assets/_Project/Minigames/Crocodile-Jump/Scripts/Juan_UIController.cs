@@ -13,6 +13,7 @@ public class Juan_UIController : MonoBehaviour
     int vidas = 3;
     private Coroutine timerCoroutine;
     int tiempo;
+    public TextMeshProUGUI textoCofres; // arrastra en inspector
 
     void Start()
     {
@@ -62,5 +63,9 @@ public class Juan_UIController : MonoBehaviour
         {
             StartCoroutine(MatchTime());
         }
+    }
+    public void MostrarProgresoCofres(int abiertos, int total)
+    {
+        textoCofres.text = abiertos + "/" + total;
     }
 }
