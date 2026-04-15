@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Juan_EnemigoPlanta : MonoBehaviour

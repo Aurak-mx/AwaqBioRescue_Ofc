@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Minigames/Crocodile-Jump/Scenes/Juan_GameOver.unity
     guid: 5e9f5ca136aca654abe36b62c77a5cc8
+  - enabled: 1
+    path: Assets/_Project/Minigames/Crocodile-Jump/Scenes/Juan_Instrucciones.unity
+    guid: a39ceddfb1657704f812888e23d71dda
+  - enabled: 1
+    path: Assets/_Project/Minigames/Crocodile-Jump/Scenes/Juan_Menu.unity
+    guid: e5f5ad06b7292a54b8e765a7c4d7b530
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
