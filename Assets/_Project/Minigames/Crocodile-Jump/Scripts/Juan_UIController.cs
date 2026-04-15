@@ -105,4 +105,20 @@ public class Juan_UIController : MonoBehaviour
             return 50;
         }
     }
+    public void ReiniciarBtn()
+    {
+        Time.timeScale = 1f;
+        Juan_GameControl.Instance.puntos = 0;
+        SceneManager.LoadScene("CocodrileGameScene");
+    }
+    public void IrHomeBtn()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Juan_Menu");
+    }
+    public void IrInstrucciones()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Juan_Instrucciones");
+    }
 }

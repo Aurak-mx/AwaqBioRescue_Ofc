@@ -4,6 +4,8 @@ public class Juan_BirdBehavior : MonoBehaviour
 {
     public float velocidad;
 
+    public float distMax;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -17,7 +19,7 @@ public class Juan_BirdBehavior : MonoBehaviour
     {
         this.transform.position += Vector3.left * Time.deltaTime * velocidad;
 
-        if (this.transform.position.x < -200)
+        if (this.transform.position.x < distMax)
         {
             GameObject.Destroy(this.gameObject);
         }

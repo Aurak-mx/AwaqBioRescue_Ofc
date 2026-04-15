@@ -8,6 +8,7 @@ public class Juan_Spawner : MonoBehaviour
     public float maxAltura;
     public float minSpawnTiempo;
     public float maxSpawnTiempo;
+    public float distMax;
 
     void Start()
     {
@@ -18,8 +19,17 @@ public class Juan_Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(minSpawnTiempo, maxSpawnTiempo));
 
-        Instantiate(prefab, new Vector3(transform.position.x,
-            transform.position.y + Random.Range(minAltura, maxAltura), 0), Quaternion.identity);
+        GameObject obj = Instantiate(prefab, new Vector3(
+            transform.position.x,
+            transform.position.y + Random.Range(minAltura, maxAltura),
+            0), Quaternion.identity);
+
+        // 👇 AHORA SÍ EXISTE obj
+        Juan_BirdBehavior bird = obj.GetComponent<Juan_BirdBehavior>();
+        if (bird != null)
+        {
+            bird.distMax = distMax;
+        }
 
         StartCoroutine(SpawnerTime());
     }

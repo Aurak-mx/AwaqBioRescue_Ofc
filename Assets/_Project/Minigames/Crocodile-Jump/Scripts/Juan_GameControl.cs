@@ -166,7 +166,7 @@ public class Juan_GameControl : MonoBehaviour
 
         estaPerdiendoVida = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Juan_GameOver");
     }
 
     public void SumarPuntos(int cantidad)
