@@ -4,7 +4,31 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using System;
 
+[Serializable]
+public class PreguntaData
+{
+    public string pregunta;
+    public string opcion1;
+    public string opcion2;
+    public string opcion3;
+    public string opcion4;
+    public int opcion_correcta;
+}
+
+[Serializable]
+public class PreguntasResponse
+{
+    public bool success;
+    public List<PreguntaData> data;
+}
+
+public class BypassCertificate : CertificateHandler
+{
+    protected override bool ValidateCertificate(byte[] certificateData) => true;
+}
 
 public class MA_PlatformManager : MonoBehaviour
 {
@@ -27,21 +51,10 @@ public class MA_PlatformManager : MonoBehaviour
 
     private int nivelActual = 0;
 
-    string[] preguntas = {
-        "¿Capital de Francia?",
-        "¿Capital de España?",
-        "¿Capital de Italia?",
-        "¿Capital de Alemania?",
-        "¿Capital de Japón?"
-    };
-    string[,] respuestas = {
-        { "Madrid", "Paris", "Roma", "Berlin" },
-        { "Sevilla", "Barcelona", "Madrid", "Valencia" },
-        { "Turin", "Milan", "Napoles", "Roma" },
-        { "Munich", "Berlin", "Hamburgo", "Frankfurt" },
-        { "Tokio", "Osaka", "Kioto", "Nagoya" }
-    };
-    int[] respuestasCorrectas = { 1, 2, 3, 1, 0};
+    private List<PreguntaData> preguntasAPI = new List<PreguntaData>();
+    private bool preguntasCargadas = false;
+    private const string API_URL = "https://192.168.1.159:5001/unity/preguntas";
+
     private int plataformaCorrecta = 1;
     private int plataformaJugador = -1;
     public List<GameObject> plataformasIniciales;
@@ -55,17 +68,8 @@ public class MA_PlatformManager : MonoBehaviour
     private bool clockPlayed = false;
     private List<int> ordenPreguntas = new List<int>();
 
-
-
     void Start()
     {
-        for (int i = 0; i < preguntas.Length; i++)
-        {
-            ordenPreguntas.Add(i);
-        }
-
-        MezclarPreguntas();
-
         nivelActual = MA_GameData.nivelGuardado;
         puntaje = MA_GameData.puntajeGuardado;
         vidas = MA_GameData.vidasGuardadas;
@@ -79,7 +83,6 @@ public class MA_PlatformManager : MonoBehaviour
             vidas = corazones.Length;
         }
 
-
         ActualizarPuntaje();
 
         for (int i = 0; i < corazones.Length; i++)
@@ -87,10 +90,47 @@ public class MA_PlatformManager : MonoBehaviour
             corazones[i].enabled = i < vidas;
         }
 
+        StartCoroutine(CargarPreguntasDesdeAPI());
+    }
 
-        StartGame();
+    IEnumerator CargarPreguntasDesdeAPI()
+    {
+        textoPregunta.text = "Cargando preguntas...";
 
+        using (UnityWebRequest request = UnityWebRequest.Get(API_URL))
+        {
+            request.certificateHandler = new BypassCertificate();
+            yield return request.SendWebRequest();
 
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                string json = request.downloadHandler.text;
+                PreguntasResponse respuesta = JsonUtility.FromJson<PreguntasResponse>(json);
+
+                if (respuesta != null && respuesta.success && respuesta.data.Count > 0)
+                {
+                    preguntasAPI = respuesta.data;
+                    preguntasCargadas = true;
+
+                    ordenPreguntas.Clear();
+                    for (int i = 0; i < preguntasAPI.Count; i++)
+                        ordenPreguntas.Add(i);
+
+                    MezclarPreguntas();
+                    StartGame();
+                }
+                else
+                {
+                    textoPregunta.text = "Error.";
+                }
+            }
+            else
+            {
+                textoPregunta.text = "Sin conexión";
+                yield return new WaitForSeconds(3f);
+                StartCoroutine(CargarPreguntasDesdeAPI());
+            }
+        }
     }
 
     void Update()
@@ -109,19 +149,24 @@ public class MA_PlatformManager : MonoBehaviour
 
     public void StartGame()
     {
-        clockPlayed = false;
+        if (!preguntasCargadas || preguntasAPI.Count == 0) return;
 
+        clockPlayed = false;
         tiempoActual = tiempoLimite;
 
         int preguntaIndex = ordenPreguntas[nivelActual];
+        PreguntaData pregunta = preguntasAPI[preguntaIndex];
 
-        textoPregunta.text = preguntas[preguntaIndex];
+        textoPregunta.text = pregunta.pregunta;
+
+        string[] respuestas = { pregunta.opcion1, pregunta.opcion2, pregunta.opcion3, pregunta.opcion4 };
+        int correctaOriginal = pregunta.opcion_correcta - 1;
 
         List<int> indices = new List<int>() { 0, 1, 2, 3 };
 
         for (int i = 0; i < indices.Count; i++)
         {
-            int rand = Random.Range(0, indices.Count);
+            int rand = UnityEngine.Random.Range(0, indices.Count);
             int temp = indices[i];
             indices[i] = indices[rand];
             indices[rand] = temp;
@@ -129,10 +174,8 @@ public class MA_PlatformManager : MonoBehaviour
 
         for (int i = 0; i < textosRespuestas.Length; i++)
         {
-            textosRespuestas[i].text = respuestas[preguntaIndex, indices[i]];
+            textosRespuestas[i].text = respuestas[indices[i]];
         }
-
-        int correctaOriginal = respuestasCorrectas[preguntaIndex];
 
         for (int i = 0; i < indices.Count; i++)
         {
@@ -148,14 +191,12 @@ public class MA_PlatformManager : MonoBehaviour
         ActualizarPuntaje();
 
         ConfigurarMovimientoPlataformas();
-
     }
 
     void ActualizarPuntaje()
     {
         textoPuntaje.text = "Puntos: " + puntaje;
     }
-
 
     IEnumerator Contador()
     {
@@ -193,7 +234,6 @@ public class MA_PlatformManager : MonoBehaviour
                 plataformasIniciales[i].GetComponent<Collider2D>().enabled = false;
             }
         }
-
         else
         {
             MA_SFXManager.instance.PlayCorrect();
@@ -202,7 +242,6 @@ public class MA_PlatformManager : MonoBehaviour
             MA_GameData.puntajeGuardado = puntaje;
 
             rachaCorrectas++;
-
 
             ActualizarPuntaje();
 
@@ -220,18 +259,16 @@ public class MA_PlatformManager : MonoBehaviour
                 }
             }
 
-            
             NuevaRonda();
         }
     }
-
-
 
     public void JugadorEnPlataforma(int id)
     {
         plataformaJugador = id;
         Debug.Log("Jugador en plataforma: " + id);
     }
+
     public void SiguienteRonda()
     {
         clockPlayed = false;
@@ -263,7 +300,6 @@ public class MA_PlatformManager : MonoBehaviour
         ResetNivel();
 
         StartGame();
-
     }
 
     public void ResetJugadorPlataforma()
@@ -286,7 +322,6 @@ public class MA_PlatformManager : MonoBehaviour
 
         jugador.GetComponent<MA_PlayerControl>().enabled = true;
 
-
         for (int i = 0; i < plataformas.Count; i++)
         {
             Collider2D col = plataformas[i].GetComponent<Collider2D>();
@@ -303,10 +338,8 @@ public class MA_PlatformManager : MonoBehaviour
 
         plataformasIniciales[nivelActual].GetComponent<Collider2D>().enabled = true;
 
-
         for (int i = 0; i < corazones.Length; i++)
             corazones[i].enabled = true;
-
 
         StartGame();
     }
@@ -329,7 +362,7 @@ public class MA_PlatformManager : MonoBehaviour
         {
             MA_SFXManager.instance.PlayGameOver();
             
-            MA_GameOverManager gm = Object.FindFirstObjectByType<MA_GameOverManager>();
+            MA_GameOverManager gm = FindFirstObjectByType<MA_GameOverManager>();
             if (gm != null)
             {
                 gm.MostrarGameOver();
@@ -343,6 +376,7 @@ public class MA_PlatformManager : MonoBehaviour
 
         ActualizarPuntaje();
     }
+
     void ResetNivel()
     {
         clockPlayed = false;
@@ -398,10 +432,8 @@ public class MA_PlatformManager : MonoBehaviour
         if (contadorCoroutine != null)
             StopCoroutine(contadorCoroutine);
 
-       
         jugador.GetComponent<MA_PlayerControl>().enabled = true;
 
-        
         for (int i = 0; i < plataformas.Count; i++)
         {
             Collider2D col = plataformas[i].GetComponent<Collider2D>();
@@ -420,6 +452,7 @@ public class MA_PlatformManager : MonoBehaviour
 
         plataformaJugador = -1;
     }
+
     public void DestruirLevelActual()
     {
         if (nivelActual < levelBlocks.Count && levelBlocks[nivelActual] != null)
@@ -427,6 +460,7 @@ public class MA_PlatformManager : MonoBehaviour
             Destroy(levelBlocks[nivelActual]);
         }
     }
+
     public void SalirDePlataforma()
     {
         plataformaJugador = -1;
@@ -445,12 +479,13 @@ public class MA_PlatformManager : MonoBehaviour
     {
         tieneParacaidas = true;
     }
+
     public bool TieneParacaidas()
     {
         return tieneParacaidas;
     }
 
-   public void UsarParacaidas()
+    public void UsarParacaidas()
     {
         tieneParacaidas = false;
 
@@ -467,6 +502,7 @@ public class MA_PlatformManager : MonoBehaviour
     {
         return nivelActual;
     }
+
     void ConfigurarMovimientoPlataformas()
     {
         for (int i = 0; i < plataformas.Count; i++)
@@ -500,11 +536,12 @@ public class MA_PlatformManager : MonoBehaviour
             }
         }
     }
+
     void MezclarPreguntas()
     {
         for (int i = 0; i < ordenPreguntas.Count; i++)
         {
-            int randomIndex = Random.Range(0, ordenPreguntas.Count);
+            int randomIndex = UnityEngine.Random.Range(0, ordenPreguntas.Count);
             int temp = ordenPreguntas[i];
             ordenPreguntas[i] = ordenPreguntas[randomIndex];
             ordenPreguntas[randomIndex] = temp;
