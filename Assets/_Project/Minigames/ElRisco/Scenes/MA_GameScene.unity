@@ -6744,7 +6744,7 @@ MonoBehaviour:
   - {fileID: 610756980}
   - {fileID: 820384853}
   - {fileID: 151789708}
-  tiempoLimite: 10
+  tiempoLimite: 15
   jugador: {fileID: 573767691}
   textoTiempo: {fileID: 801426838}
   textoPregunta: {fileID: 335140120}
