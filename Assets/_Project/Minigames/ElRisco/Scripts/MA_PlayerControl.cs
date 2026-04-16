@@ -22,7 +22,7 @@ public class MA_PlayerControl : MonoBehaviour
       // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // animatorController = GetComponent<Animator>();
+       animatorController = GetComponent<Animator>();
     }
 
     public enum PlayerAnimation
@@ -87,7 +87,7 @@ public class MA_PlayerControl : MonoBehaviour
         }
         
 
-       // UpdatePlayerAnimation();
+       UpdatePlayerAnimation();
         
     }
 
