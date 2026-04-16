@@ -18,6 +18,6 @@ public class Juan_GameOverUI : MonoBehaviour
     // 🏠 Botón Home
     public void IrHome()
     {
-        SceneManager.LoadScene("MainMenu"); // cambia por tu escena real
+        SceneManager.LoadScene("Juan_Menu"); 
     }
 }
