@@ -13,7 +13,7 @@ public class Juan_UIController : MonoBehaviour
     int vidas = 3;
     private Coroutine timerCoroutine;
     int tiempo;
-    public TextMeshProUGUI textoCofres; // arrastra en inspector
+    public TextMeshProUGUI textoCofres; 
     public TextMeshProUGUI textoPuntos;
 
     [Header("Panel Pausa")]
@@ -24,14 +24,14 @@ public class Juan_UIController : MonoBehaviour
         tiempo = Juan_GameControl.Instance.tiempoJuego;
         vidas = PlayerPrefs.GetInt("Vidas");
 
-        barraTiempo.fillAmount = 1f; // empieza llena
+        barraTiempo.fillAmount = 1f; 
         ActualizarPuntos(Juan_GameControl.Instance.puntos);
     }
     public void StartTimer()
     {
         if (timerCoroutine != null)
         {
-            StopCoroutine(timerCoroutine); // 💥 IMPORTANTE
+            StopCoroutine(timerCoroutine); 
         }
 
         timerCoroutine = StartCoroutine(MatchTime());
@@ -43,7 +43,7 @@ public class Juan_UIController : MonoBehaviour
         
         for (int i = 0; i < vidasImagenes.Length; i++)
         {
-            // Si el índice es mayor o igual a las vidas que me quedan, apago el corazón
+            
             if (i >= v)
             {
                 vidasImagenes[i].sprite = vidaGastada;
@@ -84,13 +84,13 @@ public class Juan_UIController : MonoBehaviour
     {
         panelPausa.SetActive(true);
         Juan_SFXManager.Instance.PlayBoton();
-        Time.timeScale = 0f; // ⏸️ pausa el juego
+        Time.timeScale = 0f; 
     }
     public void CerrarPausa()
     {
         panelPausa.SetActive(false);
         Juan_SFXManager.Instance.PlayBoton();
-        Time.timeScale = 1f; // ▶️ reanuda el juego
+        Time.timeScale = 1f; 
     }
     public int CalcularBonusTiempo()
     {
@@ -129,7 +129,7 @@ public class Juan_UIController : MonoBehaviour
             Juan_GameControl.Instance.invencible = false;
             Juan_GameControl.Instance.puntos = 0;
             vidas = 3;
-            Juan_GameControl.Instance.StopAllCoroutines(); // 🔥 clave
+            Juan_GameControl.Instance.StopAllCoroutines(); 
         }
 
         SceneManager.LoadScene("Juan_Instrucciones");

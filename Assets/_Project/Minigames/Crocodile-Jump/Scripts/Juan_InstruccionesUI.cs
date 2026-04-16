@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Script para manejar la pantalla de Instrucciones
 public class Juan_InstruccionesUI : MonoBehaviour
 {
     public GameObject panel1;

@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Script para manejar la meta
 public class Juan_Meta : MonoBehaviour
 {
     private bool yaActivado = false;
+    // Cuando el jugador llega a la meta
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (yaActivado) return;
+        // Si el jugador llega a la meta
         if (other.CompareTag("Player"))
         {
             yaActivado = true;

@@ -176,7 +176,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cofres. \xC1brelos y responde corectamente para ganar puntos"
+  m_text: "Llega a la meta explorando el mapa y abriendo cofres lo m\xE1s r\xE1pido
+    posible."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -388,7 +389,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gran Guardi\xE1n\n850 T\xF3tems"
+  m_text: 'CocodriloPlata
+
+    850 pts.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -951,8 +954,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Llega a la meta. Explora el mapa abriendo cofres y llegando a la meta
-    lo mas r\xE1pido posible."
+  m_text: "Llega a la meta. Explora el mapa abriendo cofres y hazlo lo m\xE1s r\xE1pido
+    posible."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -1376,7 +1379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vidas. Tienes 3. Evita los ataques y no caigas al agua.
+  m_text: Tienes 3 vidas. Evita los ataques y no caigas al agua.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -2348,7 +2351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Plantas. Esquiva sus mordidas. Salta sobre ellas para esquivarlas.
+  m_text: 'Plantas: esquiva sus mordidas. Salta sobre ellas para evitarlas.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -2602,7 +2605,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Explorador\n600 T\xF3tems"
+  m_text: 'CocodriloBronze
+
+    600 pts.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -3110,7 +3115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5793865527895719009, guid: 1de1e17d34f324da78594a70418ab310, type: 3}
+  m_Sprite: {fileID: -2549956142569179730, guid: c16e1f5fdd12d451f9488dc2c13fb16e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3900,7 +3905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7379796294361570383, guid: 1de1e17d34f324da78594a70418ab310, type: 3}
+  m_Sprite: {fileID: -367300905366089976, guid: c16e1f5fdd12d451f9488dc2c13fb16e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4050,7 +4055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9119103885995367812, guid: 1de1e17d34f324da78594a70418ab310, type: 3}
+  m_Sprite: {fileID: -442251975795038897, guid: c16e1f5fdd12d451f9488dc2c13fb16e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4125,7 +4130,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Maestro Selv\xE1tico\n1200 T\xF3tems"
+  m_text: 'CocodriloDorado
+
+    1200 pts.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -4690,7 +4697,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Cuidado con las aves! Volaran a gran velocidad hacia el jugador. Esquivalas."
+  m_text: "\xA1Cuidado con las aves! Volar\xE1n a gran velocidad hacia el jugador.
+    Esqu\xEDvalas."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}

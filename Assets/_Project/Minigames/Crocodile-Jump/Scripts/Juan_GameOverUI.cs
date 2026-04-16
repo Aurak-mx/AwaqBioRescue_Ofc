@@ -3,19 +3,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// Script para manejar la pantalla de Game Over
 public class Juan_GameOverUI : MonoBehaviour
 {
     public void Reintentar()
     {
         if (Juan_GameControl.Instance != null)
         {
-            Juan_GameControl.Instance.puntos = 0;
+            Juan_GameControl.Instance.ResetearJuego();
         }
 
         SceneManager.LoadScene("CocodrileGameScene");
     }
 
-    // 🏠 Botón Home
+    
     public void IrHome()
     {
         SceneManager.LoadScene("Juan_Menu"); 

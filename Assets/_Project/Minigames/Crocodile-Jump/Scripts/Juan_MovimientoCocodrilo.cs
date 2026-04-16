@@ -1,38 +1,39 @@
 using UnityEngine;
 
+// Script para manejar el movimiento del cocodrilo en patrulla horizontal
 public class Juan_MovimientoCocodrilo : MonoBehaviour
 {
+    // Configuración del movimiento de patrulla
     [Header("Ajustes de Movimiento")]
-    public float velocidad = 3f;         // Qué tan rápido nada
-    public float distanciaPatrulla = 5f; // Distancia máxima a cada lado
+    public float velocidad = 3f; // Velocidad de movimiento
+    public float distanciaPatrulla = 5f; // Distancia total de patrulla (ida y vuelta)
 
-    private Vector2 posicionInicial;
-    private bool moviendoDerecha = true;
-    private SpriteRenderer renderizadoSprite;
+    // Variables privadas para el estado interno
+    private Vector2 posicionInicial; // Posición de inicio para calcular límites
+    private bool moviendoDerecha = true; // Dirección actual de movimiento
+    private SpriteRenderer renderizadoSprite; // Componente para voltear el sprite
 
+    // Inicializa la posición inicial y obtiene el componente SpriteRenderer
     void Start()
     {
-        // Guardamos la posición donde empieza el cocodrilo
-        posicionInicial = transform.position;
-        // Obtenemos la referencia al SpriteRenderer para voltearlo
-        renderizadoSprite = GetComponent<SpriteRenderer>();
+        posicionInicial = transform.position; // Guardar posición de inicio
+        renderizadoSprite = GetComponent<SpriteRenderer>(); // Obtener sprite para voltearlo
     }
 
+    // Actualiza el movimiento cada frame: patrulla horizontal entre límites
     void Update()
     {
-        // 1. Calculamos los límites de patrulla basados en la posición inicial
+        // Calcular límites de patrulla basados en la posición inicial
         float limiteDerecho = posicionInicial.x + distanciaPatrulla;
         float limiteIzquierdo = posicionInicial.x - distanciaPatrulla;
 
-        // 2. Controlamos la dirección y el movimiento
+        // Movimiento hacia la derecha
         if (moviendoDerecha)
         {
-            // Mover a la derecha
-            transform.Translate(Vector2.right * velocidad * Time.deltaTime);
-            // Voltear el sprite para que mire a la derecha
-            renderizadoSprite.flipX = false;
+            transform.Translate(Vector2.right * velocidad * Time.deltaTime); // Mover a la derecha
+            renderizadoSprite.flipX = false; // Sprite mirando a la derecha
 
-            // Si llegamos al límite derecho, cambiamos de dirección
+            // Cambiar dirección al llegar al límite derecho
             if (transform.position.x >= limiteDerecho)
             {
                 moviendoDerecha = false;
@@ -40,12 +41,11 @@ public class Juan_MovimientoCocodrilo : MonoBehaviour
         }
         else
         {
-            // Mover a la izquierda
-            transform.Translate(Vector2.left * velocidad * Time.deltaTime);
-            // Voltear el sprite para que mire a la izquierda
-            renderizadoSprite.flipX = true;
+            // Movimiento hacia la izquierda
+            transform.Translate(Vector2.left * velocidad * Time.deltaTime); // Mover a la izquierda
+            renderizadoSprite.flipX = true; // Sprite mirando a la izquierda
 
-            // Si llegamos al límite izquierdo, cambiamos de dirección
+            // Cambiar dirección al llegar al límite izquierdo
             if (transform.position.x <= limiteIzquierdo)
             {
                 moviendoDerecha = true;
@@ -53,18 +53,19 @@ public class Juan_MovimientoCocodrilo : MonoBehaviour
         }
     }
 
-    // Opcional: Dibuja los límites en la ventana de Scene para referencia visual
+    // Dibuja gizmos en el editor para visualizar el área de patrulla (solo cuando está seleccionado)
     void OnDrawGizmosSelected()
     {
+        // Usar posición inicial si está en ejecución, sino la actual
         if (Application.isPlaying)
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(posicionInicial, new Vector3(distanciaPatrulla * 2, 1f, 0f));
+            Gizmos.DrawWireCube(posicionInicial, new Vector3(distanciaPatrulla * 2, 1f, 0f)); // Dibujar caja de patrulla
         }
         else
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(transform.position, new Vector3(distanciaPatrulla * 2, 1f, 0f));
+            Gizmos.DrawWireCube(transform.position, new Vector3(distanciaPatrulla * 2, 1f, 0f)); // Dibujar caja de patrulla
         }
     }
 }

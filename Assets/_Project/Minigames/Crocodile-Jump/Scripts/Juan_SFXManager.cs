@@ -1,26 +1,31 @@
 using UnityEngine;
 
+// Gestor de audio: música de fondo y efectos de sonido (SFX)
 public class Juan_SFXManager : MonoBehaviour
 {
-    public static Juan_SFXManager Instance;
+    public static Juan_SFXManager Instance; // Singleton para acceso global
 
+    // Fuentes de audio
     [Header("Audio Sources")]
-    public AudioSource musicaSource;
+    public AudioSource musicaSource; 
     public AudioSource sfxSource;
 
+    // Controles de volumen
     [Header("Volumen")]
     [Range(0f, 1f)] public float volumenMusica = 1f;
     [Range(0f, 1f)] public float volumenSFX = 1f;
 
+    // Clips de audio disponibles
     [Header("Clips")]
-    public AudioClip musicaFondo;
-    public AudioClip sonidoGolpe;
-    public AudioClip sonidoCofre;
-    public AudioClip sonidoCorrecto;
-    public AudioClip sonidoIncorrecto;
-    public AudioClip sonidoBoton;
-    public AudioClip sonidoMordedura;
+    public AudioClip musicaFondo; // Música de fondo
+    public AudioClip sonidoGolpe; // Sonido de golpe
+    public AudioClip sonidoCofre; // Sonido de cofre
+    public AudioClip sonidoCorrecto; // Sonido de respuesta correcta
+    public AudioClip sonidoIncorrecto; // Sonido de respuesta incorrecta
+    public AudioClip sonidoBoton; // Sonido de botón
+    public AudioClip sonidoMordedura; // Sonido de mordedura
 
+    // Inicializa el singleton y lo preserva entre escenas
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -33,14 +38,15 @@ public class Juan_SFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // Inicia la reproducción de música al comenzar
     void Start()
     {
         ReproducirMusica();
     }
 
+    // Actualiza los volúmenes en cada frame
     void Update()
     {
-        // Aplicar volumen en tiempo real
         if (musicaSource != null)
             musicaSource.volume = volumenMusica;
 
@@ -48,7 +54,7 @@ public class Juan_SFXManager : MonoBehaviour
             sfxSource.volume = volumenSFX;
     }
 
-    // 🎵 Música
+    // Reproduce la música de fondo en loop
     public void ReproducirMusica()
     {
         if (musicaSource != null && musicaFondo != null)
@@ -60,7 +66,7 @@ public class Juan_SFXManager : MonoBehaviour
         }
     }
 
-    // 🔊 Sonido global
+    // Reproduce un SFX una vez
     public void PlaySFX(AudioClip clip)
     {
         if (sfxSource != null && clip != null)
@@ -69,7 +75,7 @@ public class Juan_SFXManager : MonoBehaviour
         }
     }
 
-    // 📍 Sonido con posición
+    // Reproduce un SFX en una posición específica
     public void PlaySFXAtPosition(AudioClip clip, Vector3 posicion)
     {
         if (clip != null)
@@ -78,7 +84,7 @@ public class Juan_SFXManager : MonoBehaviour
         }
     }
 
-    // 🎯 MÉTODOS RÁPIDOS
+    // Métodos convenientes para SFX específicos
     public void PlayGolpe() => PlaySFX(sonidoGolpe);
     public void PlayCofre() => PlaySFX(sonidoCofre);
     public void PlayCorrecto() => PlaySFX(sonidoCorrecto);

@@ -4,33 +4,36 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 
+// Script para manejar la interfaz de preguntas con opciones y feedback
 public class Juan_PregunaUI : MonoBehaviour
 {
-    public TextMeshProUGUI preguntaTexto;
-    public Button[] botones;
+    
+    public TextMeshProUGUI preguntaTexto; 
+    public Button[] botones; 
 
-    // 🔒 Datos internos (ya no se editan en inspector)
-    private string pregunta;
-    private string[] respuestas;
-    private int respuestaCorrecta;
+    // Datos de la pregunta actual
+    private string pregunta; 
+    private string[] respuestas; 
+    private int respuestaCorrecta; 
 
+    
     private Action<bool> onRespuesta;
 
+    // Carga la pregunta y configura los botones con las respuestas
     void CargarPregunta()
     {
-        preguntaTexto.text = pregunta;
+        preguntaTexto.text = pregunta; // Mostrar pregunta
 
         for (int i = 0; i < botones.Length; i++)
         {
-            int index = i;
+            int index = i; // Capturar índice para el listener
 
-            // 🔄 Reset botón
-            botones[i].interactable = true;
+            botones[i].interactable = true; // Habilitar botón
 
             Image img = botones[i].GetComponent<Image>();
-            img.color = Color.white;
+            img.color = Color.white; // Resetear color
 
-            // 📝 Asignar texto
+            // Asignar texto de respuesta si existe
             if (respuestas != null && i < respuestas.Length)
             {
                 var texto = botones[i].GetComponentInChildren<TextMeshProUGUI>();
@@ -38,64 +41,63 @@ public class Juan_PregunaUI : MonoBehaviour
                     texto.text = respuestas[i];
             }
 
-            // 🔘 Asignar evento
+            // Limpiar y agregar listener para verificar respuesta
             botones[i].onClick.RemoveAllListeners();
             botones[i].onClick.AddListener(() => VerificarRespuesta(index));
         }
     }
 
+    // Verifica la respuesta seleccionada y muestra feedback visual
     void VerificarRespuesta(int index)
     {
-        // 🔒 Bloquear botones
+        // Deshabilitar todos los botones
         foreach (Button b in botones)
             b.interactable = false;
 
-        bool esCorrecta = (index == respuestaCorrecta);
+        bool esCorrecta = (index == respuestaCorrecta); // Verificar si es correcta
 
-        // 🎨 Feedback visual
+        // Cambiar colores: verde para correcta, rojo para incorrecta seleccionada
         for (int i = 0; i < botones.Length; i++)
         {
             Image img = botones[i].GetComponent<Image>();
 
             if (i == respuestaCorrecta)
             {
-                img.color = Color.green; // correcta
+                img.color = Color.green; // Correcta
             }
             else if (i == index)
             {
-                img.color = Color.red; // la que elegiste mal
+                img.color = Color.red; // Incorrecta seleccionada
             }
         }
 
-        Debug.Log(esCorrecta ? "Correcto" : "Incorrecto");
+        onRespuesta?.Invoke(esCorrecta); // Invocar callback
 
-        // 📢 Avisar al cofre
-        onRespuesta?.Invoke(esCorrecta);
-
-        // ⏱️ Cerrar después de un momento
-        StartCoroutine(CerrarConDelay());
+        StartCoroutine(CerrarConDelay()); // Cerrar panel con delay
     }
 
+    // Corutina para cerrar el panel después de un delay
     IEnumerator CerrarConDelay()
     {
         yield return new WaitForSecondsRealtime(1.5f);
-        CerrarPanel();
+        CerrarPanel(); 
     }
 
+    // Cierra el panel y reanuda el tiempo
     void CerrarPanel()
     {
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        Time.timeScale = 1f; 
+        gameObject.SetActive(false); // Ocultar panel
     }
 
-    // 🔥 Método que llama el cofre
+    // Método público para configurar una nueva pregunta
     public void SetPregunta(string nuevaPregunta, string[] nuevasRespuestas, int correcta, Action<bool> callback)
     {
-        pregunta = nuevaPregunta;
-        respuestas = nuevasRespuestas;
-        respuestaCorrecta = correcta;
-        onRespuesta = callback;
+        pregunta = nuevaPregunta; // Asignar pregunta
+        respuestas = nuevasRespuestas; // Asignar respuestas
+        respuestaCorrecta = correcta; // Asignar índice correcta
+        onRespuesta = callback; // Asignar callback
 
-        CargarPregunta();
+        CargarPregunta(); // Cargar y mostrar
     }
 }

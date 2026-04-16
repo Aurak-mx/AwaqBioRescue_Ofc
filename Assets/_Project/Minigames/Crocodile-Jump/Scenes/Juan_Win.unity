@@ -1313,9 +1313,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Juan_WinUI
   textoPuntos: {fileID: 955826304}
   imagenMedalla: {fileID: 193026037}
-  medallaBronce: {fileID: 6451699637212821852, guid: ef2eeb68d3ee4db4c90d3776cabf800a, type: 3}
-  medallaPlata: {fileID: 3500244828125302084, guid: ef2eeb68d3ee4db4c90d3776cabf800a, type: 3}
-  medallaOro: {fileID: -2486629912459962170, guid: ef2eeb68d3ee4db4c90d3776cabf800a, type: 3}
+  medallaBronce: {fileID: -442251975795038897, guid: c16e1f5fdd12d451f9488dc2c13fb16e, type: 3}
+  medallaPlata: {fileID: -367300905366089976, guid: c16e1f5fdd12d451f9488dc2c13fb16e, type: 3}
+  medallaOro: {fileID: -2549956142569179730, guid: c16e1f5fdd12d451f9488dc2c13fb16e, type: 3}
   apiManager: {fileID: 1324075580}
 --- !u!82 &771550241
 AudioSource:

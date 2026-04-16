@@ -22,30 +22,34 @@ public class Juan_WinUI : MonoBehaviour
 
     void Start()
     {
+        // Obtenemos los puntos finales
         puntos = PlayerPrefs.GetInt("PuntosFinales", 0);
+        // Actualizamos la UI
         textoPuntos.text = "Puntos: " + puntos;
         AsignarMedalla();
     }
 
+    // Funcion para cambiar la imagen de la medalla
     void AsignarMedalla()
     {
+        // Dependiendo de la cantidad de puntos obtenidos se asignara una medalla
         if (puntos >= 800)
         {
             imagenMedalla.sprite = medallaOro;
-            idMedalla = 1;  // Oro
+            idMedalla = 1;  
         }
         else if (puntos >= 400)
         {
             imagenMedalla.sprite = medallaPlata;
-            idMedalla = 2;  // Plata
+            idMedalla = 2;  
         }
         else
         {
             imagenMedalla.sprite = medallaBronce;
-            idMedalla = 3;  // Bronce
+            idMedalla = 3;  
         }
 
-        // Enviar a la API después de asignar medalla
+        // Enviamos la medalla al servidor
         int idUsuario = PlayerPrefs.GetInt("UserID", 1); 
         if (apiManager != null)
         {
@@ -53,19 +57,19 @@ public class Juan_WinUI : MonoBehaviour
         }
     }
 
-    // 🔁 Botón Reintentar
+    // Boton para reintentar el juego
     public void Reintentar()
     {
         if (Juan_GameControl.Instance != null)
         {
-            Juan_GameControl.Instance.puntos = 0;
+            Juan_GameControl.Instance.ResetearJuego();
         }
         SceneManager.LoadScene("CocodrileGameScene");
     }
 
-    // 🏠 Botón Home
+    // Boton para ir a la pantalla principal
     public void IrHome()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Juan_Menu");
     }
 }

@@ -17,21 +17,27 @@ public class Juan_BalanceoPlataforma : MonoBehaviour
 
     void Start()
     {
+        // Guardar la posición inicial
         posicionInicial = transform.position;
     }
 
     void Update()
     {
+        // Actualizar el tiempo
         tiempo += Time.deltaTime * velocidad;
 
-        // 🔄 ROTACIÓN (balanceo)
+
+        // Actualizar la rotación en base al tiempo
         float angulo = Mathf.Sin(tiempo) * amplitudRotacion;
+
+        // Rotamos el objeto
         transform.rotation = Quaternion.Euler(0, 0, angulo);
 
-        // 🌿 MOVIMIENTO EN ARCO
+        // Actualizar la posición en base al tiempo de "x" y "y"
         float x = Mathf.Sin(tiempo) * amplitudX;
         float y = -Mathf.Cos(tiempo) * amplitudY;
 
+        // Actualizar la posición con una nueva posición
         transform.position = posicionInicial + new Vector3(x, y, 0);
     }
 }

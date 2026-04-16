@@ -22,49 +22,56 @@ public class Juan_CofreInteraccion : MonoBehaviour
 
     void Update()
     {
+        // Si el jugador esta cerca, no esta abierto y presiona la tecla E
         if (playerCerca && Input.GetKeyDown(KeyCode.E) && !abierto)
         {
+            // Ejecutamos su sonido
             Juan_SFXManager.Instance.PlayCofre();
+            // Abrimos el cofre
             StartCoroutine(AbrirCofre());
         }
     }
 
     IEnumerator AbrirCofre()
     {
+        // Marcamos que el cofre esta abierto
         abierto = true;
 
+        // Desactivamos el mensaje de "E"
         mensajeE.SetActive(false);
 
-        // 🎬 Animación
+        // Activamos el Animator
         if (animator != null)
             animator.SetBool("Abrir", true);
 
-        // ⏱️ Esperar animación
+        // Esperamos 1 segundo para que se escuche el sonido
         yield return new WaitForSeconds(1f);
 
-        // 👇 CONTAR COFRE AQUÍ (IMPORTANTE)
+        // Abrimos el cofre
         if (Juan_CofresManager.Instance != null)
         {
             Juan_CofresManager.Instance.CofreAbierto();
         }
 
-        // 🧠 Mostrar pregunta
+        // Activamos el panel de la pregunta
         panelPregunta.SetActive(true);
 
-        // 🧊 Pausar juego
+
+        // Detenemos el juego
         Time.timeScale = 0f;
 
+        // Mostramos la pregunta con su pregunta, opciones e indice de la respuesta correcta
         preguntaUI.SetPregunta(pregunta, respuestas, respuestaCorrecta, ResultadoPregunta);
-
-        Debug.Log("Cofre abierto");
     }
 
     void ResultadoPregunta(bool correcta)
     {
+        // Si la pregunta es correcta
         if (correcta)
         {
             if (Juan_GameControl.Instance != null)
             {
+                // Sumamos 200 puntos y reproducimos el sonido
                 Juan_SFXManager.Instance.PlayCorrecto();
                 Juan_GameControl.Instance.SumarPuntos(200);
             }
@@ -72,7 +79,8 @@ public class Juan_CofreInteraccion : MonoBehaviour
         else
         {
             if (Juan_GameControl.Instance != null)
-            {
+            {   
+                // Restamos 50 puntos y reproducimos el sonido
                 Juan_SFXManager.Instance.PlayIncorrecto();
                 Juan_GameControl.Instance.SumarPuntos(-50);
             }
@@ -81,6 +89,7 @@ public class Juan_CofreInteraccion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Si el jugador entra al area del trigger se activa el panel del mensaje
         if (other.CompareTag("Player") && !abierto)
         {
             playerCerca = true;
@@ -90,6 +99,7 @@ public class Juan_CofreInteraccion : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        // Si el jugador sale del area del trigger se desactiva el panel del mensaje
         if (other.CompareTag("Player"))
         {
             playerCerca = false;
