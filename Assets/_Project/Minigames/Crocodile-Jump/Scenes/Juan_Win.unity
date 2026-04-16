@@ -1391,6 +1391,7 @@ MonoBehaviour:
   medallaBronce: {fileID: 6451699637212821852, guid: ef2eeb68d3ee4db4c90d3776cabf800a, type: 3}
   medallaPlata: {fileID: 3500244828125302084, guid: ef2eeb68d3ee4db4c90d3776cabf800a, type: 3}
   medallaOro: {fileID: -2486629912459962170, guid: ef2eeb68d3ee4db4c90d3776cabf800a, type: 3}
+  apiManager: {fileID: 1324075580}
 --- !u!1 &838756769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,6 +2109,50 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1324075579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324075581}
+  - component: {fileID: 1324075580}
+  m_Layer: 0
+  m_Name: Juan_APIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1324075580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324075579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c2630ee303b440abb36ed41161d92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Juan_APIManager
+--- !u!4 &1324075581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324075579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 531.7469, y: 235.96165, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344874309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4650,3 +4695,4 @@ SceneRoots:
   - {fileID: 771550239}
   - {fileID: 1418689203}
   - {fileID: 1867524127}
+  - {fileID: 1324075581}
