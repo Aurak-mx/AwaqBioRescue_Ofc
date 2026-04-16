@@ -53,7 +53,7 @@ public class MA_PlatformManager : MonoBehaviour
 
     private List<PreguntaData> preguntasAPI = new List<PreguntaData>();
     private bool preguntasCargadas = false;
-    private const string API_URL = "https://192.168.1.159:5001/unity/preguntas";
+    private const string API_URL = "https://127.0.0.1:5001/unity/preguntas";
 
     private int plataformaCorrecta = 1;
     private int plataformaJugador = -1;

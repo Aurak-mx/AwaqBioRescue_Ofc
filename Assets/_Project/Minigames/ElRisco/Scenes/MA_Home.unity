@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vidas. Tienes 3. Responde Correctamente y no caigas al abismo.
+  m_text: Vidas. Tienes 3. Responde correctamente y no caigas al abismo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gran Guardi\xE1n\n850 T\xF3tems"
+  m_text: "Aventurero\n850 T\xF3tems"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Explorador\n600 T\xF3tems"
+  m_text: "Superviviente\n600 T\xF3tems"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
@@ -2918,7 +2918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5793865527895719009, guid: 1de1e17d34f324da78594a70418ab310, type: 3}
+  m_Sprite: {fileID: -8678413838440665111, guid: 0e9fde05666d45649b88394019643703, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7379796294361570383, guid: 1de1e17d34f324da78594a70418ab310, type: 3}
+  m_Sprite: {fileID: 3842756366753486934, guid: 0e9fde05666d45649b88394019643703, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7938,7 +7938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9119103885995367812, guid: 1de1e17d34f324da78594a70418ab310, type: 3}
+  m_Sprite: {fileID: -3162494562269359919, guid: 0e9fde05666d45649b88394019643703, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8013,7 +8013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Maestro Selv\xE1tico\n1200 T\xF3tems"
+  m_text: "Gran T\xF3tem\n1200 T\xF3tems"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}
   m_sharedMaterial: {fileID: -8980053810782490421, guid: 80351b28be6a04ccab499bb49a6c02b5, type: 2}

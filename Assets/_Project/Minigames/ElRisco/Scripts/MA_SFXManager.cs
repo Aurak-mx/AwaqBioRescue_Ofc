@@ -93,7 +93,7 @@ public class MA_SFXManager : MonoBehaviour
         {
             musicSource.clip = nuevaMusica;
             musicSource.loop = loop;
-            musicSource.volume = 0.20f;
+            musicSource.volume = 0.30f;
             musicSource.Play();
         }
     }
