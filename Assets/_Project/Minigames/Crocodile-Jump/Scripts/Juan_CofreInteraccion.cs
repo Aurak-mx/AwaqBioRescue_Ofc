@@ -24,6 +24,7 @@ public class Juan_CofreInteraccion : MonoBehaviour
     {
         if (playerCerca && Input.GetKeyDown(KeyCode.E) && !abierto)
         {
+            Juan_SFXManager.Instance.PlayCofre();
             StartCoroutine(AbrirCofre());
         }
     }
@@ -64,6 +65,7 @@ public class Juan_CofreInteraccion : MonoBehaviour
         {
             if (Juan_GameControl.Instance != null)
             {
+                Juan_SFXManager.Instance.PlayCorrecto();
                 Juan_GameControl.Instance.SumarPuntos(200);
             }
         }
@@ -71,6 +73,7 @@ public class Juan_CofreInteraccion : MonoBehaviour
         {
             if (Juan_GameControl.Instance != null)
             {
+                Juan_SFXManager.Instance.PlayIncorrecto();
                 Juan_GameControl.Instance.SumarPuntos(-50);
             }
         }

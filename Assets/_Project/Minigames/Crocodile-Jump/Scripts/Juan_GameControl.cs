@@ -98,6 +98,7 @@ public class Juan_GameControl : MonoBehaviour
 
     void PerderVida()
     {
+        Juan_SFXManager.Instance.PlayGolpe();
         invencible = true;
 
         int vidasActuales = GetVidasRestantes();

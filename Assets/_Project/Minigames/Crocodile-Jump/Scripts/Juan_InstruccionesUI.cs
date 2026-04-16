@@ -30,7 +30,7 @@ public class Juan_InstruccionesUI : MonoBehaviour
 
         if (Juan_GameControl.Instance != null)
         {
-            Juan_GameControl.Instance.puntos = 0;
+            Juan_GameControl.Instance.ResetearJuego();
         }
 
         SceneManager.LoadScene("CocodrileGameScene");

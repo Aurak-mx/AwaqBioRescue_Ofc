@@ -83,11 +83,13 @@ public class Juan_UIController : MonoBehaviour
     public void AbrirPausa()
     {
         panelPausa.SetActive(true);
+        Juan_SFXManager.Instance.PlayBoton();
         Time.timeScale = 0f; // ⏸️ pausa el juego
     }
     public void CerrarPausa()
     {
         panelPausa.SetActive(false);
+        Juan_SFXManager.Instance.PlayBoton();
         Time.timeScale = 1f; // ▶️ reanuda el juego
     }
     public int CalcularBonusTiempo()

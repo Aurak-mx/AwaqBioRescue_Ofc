@@ -8,6 +8,10 @@ public class Juan_SFXManager : MonoBehaviour
     public AudioSource musicaSource;
     public AudioSource sfxSource;
 
+    [Header("Volumen")]
+    [Range(0f, 1f)] public float volumenMusica = 1f;
+    [Range(0f, 1f)] public float volumenSFX = 1f;
+
     [Header("Clips")]
     public AudioClip musicaFondo;
     public AudioClip sonidoGolpe;
@@ -15,14 +19,10 @@ public class Juan_SFXManager : MonoBehaviour
     public AudioClip sonidoCorrecto;
     public AudioClip sonidoIncorrecto;
     public AudioClip sonidoBoton;
-    public AudioClip cocodrilo;
-    public AudioClip pajaro;
-    public AudioClip cuerda;
-    public AudioClip sonidoPlanta;
+    public AudioClip sonidoMordedura;
 
     void Awake()
     {
-        // Singleton
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -30,12 +30,22 @@ public class Juan_SFXManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // 🔥 opcional pero recomendado
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
         ReproducirMusica();
+    }
+
+    void Update()
+    {
+        // Aplicar volumen en tiempo real
+        if (musicaSource != null)
+            musicaSource.volume = volumenMusica;
+
+        if (sfxSource != null)
+            sfxSource.volume = volumenSFX;
     }
 
     // 🎵 Música
@@ -45,44 +55,34 @@ public class Juan_SFXManager : MonoBehaviour
         {
             musicaSource.clip = musicaFondo;
             musicaSource.loop = true;
+            musicaSource.volume = volumenMusica;
             musicaSource.Play();
         }
     }
 
-    // 🔊 Sonido global (UI, botones, etc.)
+    // 🔊 Sonido global
     public void PlaySFX(AudioClip clip)
     {
         if (sfxSource != null && clip != null)
         {
-            sfxSource.PlayOneShot(clip);
+            sfxSource.PlayOneShot(clip, volumenSFX);
         }
     }
 
-    // 📍 Sonido con posición (enemigos, mundo)
+    // 📍 Sonido con posición
     public void PlaySFXAtPosition(AudioClip clip, Vector3 posicion)
     {
         if (clip != null)
         {
-            AudioSource.PlayClipAtPoint(clip, posicion);
+            AudioSource.PlayClipAtPoint(clip, posicion, volumenSFX);
         }
     }
 
-    // 🎯 MÉTODOS RÁPIDOS (GLOBAL)
+    // 🎯 MÉTODOS RÁPIDOS
     public void PlayGolpe() => PlaySFX(sonidoGolpe);
     public void PlayCofre() => PlaySFX(sonidoCofre);
     public void PlayCorrecto() => PlaySFX(sonidoCorrecto);
     public void PlayIncorrecto() => PlaySFX(sonidoIncorrecto);
     public void PlayBoton() => PlaySFX(sonidoBoton);
-
-    // 🎯 MÉTODOS RÁPIDOS (CON POSICIÓN)
-    public void PlayCocodrilo(Vector3 pos) => PlaySFXAtPosition(cocodrilo, pos);
-    public void PlayPajaro(Vector3 pos) => PlaySFXAtPosition(pajaro, pos);
-    public void PlayCuerda(Vector3 pos) => PlaySFXAtPosition(cuerda, pos);
-    public void PlayPlanta(Vector3 pos) => PlaySFXAtPosition(sonidoPlanta, pos);
-
-    // 🔥 OPCIONAL: versiones globales también
-    public void PlayCocodrilo() => PlaySFX(cocodrilo);
-    public void PlayPajaro() => PlaySFX(pajaro);
-    public void PlayCuerda() => PlaySFX(cuerda);
-    public void PlayPlanta() => PlaySFX(sonidoPlanta);
+    public void PlayMordedura() => PlaySFX(sonidoMordedura);
 }

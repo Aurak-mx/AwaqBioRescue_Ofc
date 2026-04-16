@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1360326949927503145}
   - component: {fileID: 1675829463044768100}
   - component: {fileID: 2075882060419786113}
+  - component: {fileID: 1061355323527049965}
   m_Layer: 0
   m_Name: Pajaro 1
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1567123567
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4035959289877228764, guid: d644f61f06e4a467ea9924bfff057743, type: 3}
@@ -175,3 +176,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BirdBehavior
   velocidad: 10
+  distMax: 0
+--- !u!114 &1061355323527049965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618593143610783691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32136d725a1979e4bab091d7cc72333f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Juan_AmbientSound
+  sonido: {fileID: 8300000, guid: 749fffbb39e172045ab437ebf9b50d5b, type: 3}
+  tiempoMin: 0
+  tiempoMax: 1

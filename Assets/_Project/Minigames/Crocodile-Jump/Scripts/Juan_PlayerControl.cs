@@ -1,3 +1,5 @@
+using System;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,14 +12,18 @@ public class Juan_PlayerControl : MonoBehaviour
     [Header("Referencias")]
     public Rigidbody2D rig;
     public SpriteRenderer sr;
-
+    Animator animatorController;
     private float xInput;
     private bool jumpRequested;
     private bool isGrounded = true;
 
+    void Start()
+    {
+        animatorController = GetComponent<Animator>();
+    }
     void Update()
     {
-        // 1. Lectura de movimiento horizontal
+        // Movimiento horizontal
         xInput = 0f;
         if (Keyboard.current.dKey.isPressed)
         {
@@ -28,36 +34,78 @@ public class Juan_PlayerControl : MonoBehaviour
             xInput = -1f;
         }
 
-        // 2. Voltear el sprite según la dirección
+        // Voltear sprite
         if (xInput != 0)
         {
-            sr.flipX = xInput < 0;
+            sr.flipX = xInput > 0;
         }
 
-        // 3. Lectura de salto
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        // Salto
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded || Keyboard.current.wKey.wasPressedThisFrame && isGrounded)
         {
             jumpRequested = true;
             isGrounded = false;
         }
+
+        UpdatePlayerAnimation();
     }
 
     void FixedUpdate()
     {
-        // Aplicar movimiento horizontal manteniendo la velocidad vertical actual
         rig.linearVelocity = new Vector2(xInput * moveSpeed, rig.linearVelocity.y);
 
-        // Aplicar salto
         if (jumpRequested)
         {
             rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpRequested = false;
         }
 
-        // Detección simple de suelo (basada en velocidad vertical)
         if (Mathf.Abs(rig.linearVelocity.y) < 0.01f)
         {
             isGrounded = true;
+        }
+    }
+
+    public enum PlayerAnimationState
+    {
+        Idle,
+        Walking,
+        Jumping
+    }
+
+    void UpdatePlayerAnimation()
+    {
+
+        if (!isGrounded)
+        {
+            UpdateAnimation(PlayerAnimationState.Jumping);
+        }
+        else if (xInput != 0)
+        {
+            UpdateAnimation(PlayerAnimationState.Walking);
+        }
+        else
+        {
+            UpdateAnimation(PlayerAnimationState.Idle);
+        }
+    }
+
+    void UpdateAnimation(PlayerAnimationState nameAnimation)
+    {
+        switch(nameAnimation)
+        {
+            case PlayerAnimationState.Idle:
+                animatorController.SetBool("isWalking", false); 
+                animatorController.SetBool("isJumping", false);
+                break;
+            case PlayerAnimationState.Walking:
+                animatorController.SetBool("isWalking", true);
+                animatorController.SetBool("isJumping", false);
+                break;
+            case PlayerAnimationState.Jumping:
+                animatorController.SetBool("isWalking", false);
+                animatorController.SetBool("isJumping", true);
+                break;
         }
     }
 }
