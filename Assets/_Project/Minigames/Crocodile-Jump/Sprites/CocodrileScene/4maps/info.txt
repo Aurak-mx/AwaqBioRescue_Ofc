@@ -1,0 +1,10 @@
+Hi guys.
+
+This package incudes:
+
+4 x tilemaps (city ruins, jungle, spooky, woodland)
+4 x matching backgrounds
+4 x objects (door, palm tree, skull, box)
+4 x Construct 2 files with examples. 
+Made by onixgames.com
+Enjoy :)
