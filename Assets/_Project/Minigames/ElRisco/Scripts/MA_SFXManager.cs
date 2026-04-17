@@ -89,7 +89,7 @@ public class MA_SFXManager : MonoBehaviour
                 break;
         }
 
-        if (nuevaMusica != null && musicSource.clip != nuevaMusica)
+        if (nuevaMusica != null && (musicSource.clip != nuevaMusica || !musicSource.isPlaying))
         {
             musicSource.clip = nuevaMusica;
             musicSource.loop = loop;
