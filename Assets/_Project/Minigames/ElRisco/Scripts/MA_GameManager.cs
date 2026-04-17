@@ -12,6 +12,12 @@ public class MA_GameManager : MonoBehaviour
         MA_SFXManager.instance.PlayButtonClick();
         SceneManager.LoadScene("MA_GameScene");
     }
+    public void HubScene()
+    {
+        MA_SFXManager.instance.PlayButtonClick();
+        MA_SFXManager.instance.StopMusic();
+        SceneManager.LoadScene("HubMinijuegos");
+    }
 
     public void infoButton()
     {

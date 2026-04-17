@@ -53,7 +53,7 @@ public class MA_SFXManager : MonoBehaviour
 
     void Start()
     {
-        CambiarMusica(SceneManager.GetActiveScene().name);
+        CambiarMusica("MA_Home");
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -143,5 +143,14 @@ public class MA_SFXManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(gameOverSound, 1f);
     }
+
+    public void StopMusic()
+    {
+        if (musicSource.isPlaying)
+        {
+            musicSource.Stop();
+        }
+    }
+
 
 }
