@@ -5,11 +5,11 @@ using UnityEngine;
 public class Juan_Spawner : MonoBehaviour
 {
     public GameObject prefab; // Prefab a instanciar
-    public float minAltura; // Altura mínima de spawn
-    public float maxAltura; // Altura máxima de spawn
-    public float minSpawnTiempo; // Tiempo mínimo entre spawns
-    public float maxSpawnTiempo; // Tiempo máximo entre spawns
-    public float distMax; // Distancia máxima para el comportamiento del objeto
+    public float minAltura; 
+    public float maxAltura; 
+    public float minSpawnTiempo; 
+    public float maxSpawnTiempo; 
+    public float distMax; 
 
     // Inicia la corutina de spawn al comenzar
     void Start()

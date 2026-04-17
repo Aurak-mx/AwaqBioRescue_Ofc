@@ -5,61 +5,61 @@ public class Juan_EnemigoPlanta : MonoBehaviour
 {
     // Configuración de movimiento: velocidad y distancia de patrulla
     [Header("Configuración de Movimiento")]
-    public float velocidadPatrulla = 2f; // Velocidad a la que se mueve durante la patrulla
-    public float distanciaPatrulla = 3f; // Distancia máxima que recorre en cada dirección
+    public float velocidadPatrulla = 2f; 
+    public float distanciaPatrulla = 3f; 
     
     // Configuración de ataque: rango de visión y capa del jugador
     [Header("Configuración de Ataque")]
-    public float rangoVision = 4f; // Distancia máxima para detectar al jugador con raycast
-    public LayerMask capaJugador; // Capa en la que se encuentra el jugador para filtrar raycasts
+    public float rangoVision = 4f; 
+    public LayerMask capaJugador; 
 
-    // Posición inicial del enemigo para calcular límites de patrulla
+    
     private Vector2 posicionInicial;
-    // Dirección actual de movimiento (true = derecha, false = izquierda)
+    
     public bool moviendoDerecha = true;
     
-    // Componentes gráficos y de animación
-    private SpriteRenderer renderizador; // Para voltear el sprite según la dirección
-    private Animator animador; // Para controlar animaciones de caminar y atacar
-    // Estado de detección del jugador
+    
+    private SpriteRenderer renderizador; 
+    private Animator animador; 
+    
     private bool jugadorDetectado = false;
-    // Rango mínimo para atacar al jugador
+    
     public float rangoAtaque = 1.5f;
-    // Indica si el enemigo está tocando al jugador (para detener movimiento)
+    
     private bool tocandoJugador = false;
 
     // Método que se ejecuta al iniciar el objeto, inicializa componentes y posición
     void Start()
     {
-        // Guardar la posición inicial para calcular límites de patrulla
+        // Guardamos la posición inicial
         posicionInicial = transform.position;
-        // Obtener el componente SpriteRenderer para manejar el volteo del sprite
-        renderizador = GetComponent<SpriteRenderer>();
-        // Obtener el componente Animator para controlar animaciones
-        animador = GetComponent<Animator>();
+        renderizador = GetComponent<SpriteRenderer>(); // Obtenemos el componente SpriteRenderer
+        animador = GetComponent<Animator>();            // Obtenemos el componente Animator
     }
 
-    // Método que se ejecuta cada frame, maneja la lógica de detección y movimiento
+    // Método que se ejecuta cada frame
     void Update()
     {
-        // Si está tocando al jugador, no se mueve para evitar superposición
+        // Si está tocando al jugador, no se mueve
         if (tocandoJugador) return;
 
-        // Origen del raycast desde la cabeza del enemigo (un poco arriba)
+        // Rayo de visión para detectar al jugador
         Vector3 origenRayo = transform.position + new Vector3(0, 1f, 0); 
 
         // Lanzar raycasts hacia derecha e izquierda para detectar al jugador
         RaycastHit2D hitDerecha = Physics2D.Raycast(origenRayo, Vector2.right, rangoVision, capaJugador);
         RaycastHit2D hitIzquierda = Physics2D.Raycast(origenRayo, Vector2.left, rangoVision, capaJugador);
 
-        // Seleccionar el raycast que detectó al jugador (derecha o izquierda)
+        // Selecciona el rayo que detectó al jugador (derecha o izquierda)
         RaycastHit2D hit = hitDerecha.collider != null ? hitDerecha : hitIzquierda;
+
+        // Si el rayo detectó al jugador
         if (hit.collider != null)
         {
-            // Jugador detectado, cambiar estado
+            // Jugador detectado, cambiamos estado
             jugadorDetectado = true;
 
-            // Determinar si el jugador está a la derecha o izquierda
+            // Determinar dirección del jugador
             bool jugadorALaDerecha = hit.collider.transform.position.x > transform.position.x;
 
             // Ajustar dirección de movimiento y volteo del sprite hacia el jugador
@@ -131,7 +131,7 @@ public class Juan_EnemigoPlanta : MonoBehaviour
     {
         // Color verde para el gizmo
         Gizmos.color = Color.green;
-        // Dirección del rayo según movimiento actual
+        // Dirección del rayo según a donde se mueve 
         Vector3 direccion = moviendoDerecha ? Vector3.right : Vector3.left;
         // Origen del rayo (desde la cabeza)
         Vector3 origenRayo = transform.position + new Vector3(0, 1f, 0);

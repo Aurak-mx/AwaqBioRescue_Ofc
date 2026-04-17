@@ -5,13 +5,13 @@ public class Juan_Tortuga : MonoBehaviour
 {
     // Configuración del movimiento de patrulla
     [Header("Ajustes de Movimiento")]
-    public float velocidad = 3f; // Velocidad de movimiento
-    public float distanciaPatrulla = 5f; // Distancia total de patrulla
+    public float velocidad = 3f; 
+    public float distanciaPatrulla = 5f; 
 
-    // Variables privadas para estado interno
-    private Vector2 posicionInicial; // Posición de inicio
-    private bool moviendoDerecha = true; // Dirección actual
-    private SpriteRenderer renderizadoSprite; // Sprite para voltear
+   
+    private Vector2 posicionInicial; 
+    private bool moviendoDerecha = true; 
+    private SpriteRenderer renderizadoSprite; 
 
     // Inicializa posición y sprite
     void Start()

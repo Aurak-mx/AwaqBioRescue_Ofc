@@ -7,24 +7,24 @@ public class Juan_GameControl : MonoBehaviour
 {
     // Configuración básica del juego
     [Header("Configuración")]
-    public int tiempoJuego = 60; // Tiempo total del juego en segundos
-    public static Juan_GameControl Instance; // Instancia singleton para acceso global
+    public int tiempoJuego = 60; 
+    public static Juan_GameControl Instance; 
     
     // Referencias a otros componentes del juego
     [Header("Referencias")]
-    public Juan_UIController UIController; // Controlador de la interfaz de usuario
-    public Juan_SFXManager sfxManager; // Gestor de efectos de sonido
-    public SpriteRenderer playerSprite; // Sprite del jugador para efectos visuales
+    public Juan_UIController UIController; 
+    public Juan_SFXManager sfxManager; 
+    public SpriteRenderer playerSprite; 
 
     // Sistema de puntuación
     [Header("Puntaje")]
-    public int puntos = 0; // Puntos acumulados del jugador
+    public int puntos = 0; 
 
     // Estado del jugador
     [Header("Estado")]
-    public bool invencible = false; // Indica si el jugador es invencible temporalmente
+    public bool invencible = false; 
 
-    // Inicializa el singleton y configura valores iniciales al cargar el objeto
+    // Inicializa el singleton y configuramos los valores iniciales al cargar el objeto
     void Awake()
     {
         // Implementar patrón singleton: destruir duplicados y preservar instancia
@@ -68,7 +68,7 @@ public class Juan_GameControl : MonoBehaviour
         ResetearJuego();
         SetReferences(); 
 
-        // Asegurar que el sprite del jugador esté visible
+        // Asegurar que el sprite del jugador esté visible (para evitar errores de invisibilidad)
         if (playerSprite != null)
             playerSprite.enabled = true;
     }

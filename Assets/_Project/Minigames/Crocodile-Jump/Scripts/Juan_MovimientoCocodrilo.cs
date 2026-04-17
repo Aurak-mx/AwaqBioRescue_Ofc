@@ -5,13 +5,13 @@ public class Juan_MovimientoCocodrilo : MonoBehaviour
 {
     // Configuración del movimiento de patrulla
     [Header("Ajustes de Movimiento")]
-    public float velocidad = 3f; // Velocidad de movimiento
-    public float distanciaPatrulla = 5f; // Distancia total de patrulla (ida y vuelta)
+    public float velocidad = 3f; 
+    public float distanciaPatrulla = 5f; 
 
-    // Variables privadas para el estado interno
-    private Vector2 posicionInicial; // Posición de inicio para calcular límites
-    private bool moviendoDerecha = true; // Dirección actual de movimiento
-    private SpriteRenderer renderizadoSprite; // Componente para voltear el sprite
+    
+    private Vector2 posicionInicial; 
+    private bool moviendoDerecha = true; 
+    private SpriteRenderer renderizadoSprite; 
 
     // Inicializa la posición inicial y obtiene el componente SpriteRenderer
     void Start()

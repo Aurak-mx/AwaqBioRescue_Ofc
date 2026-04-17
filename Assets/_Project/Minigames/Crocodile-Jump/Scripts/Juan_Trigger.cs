@@ -3,7 +3,6 @@ using UnityEngine;
 // Script para manejar daño de objetos solidos escenas
 public class Juan_Trigger : MonoBehaviour
 {
-    // Cuando el jugador colisiona con el trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
