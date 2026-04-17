@@ -36,7 +36,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OpenMainGameMenu()
     {
-        SceneManager.LoadScene("MainGamesMenu"); 
+        SceneManager.LoadScene("HubMinijuegos"); 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

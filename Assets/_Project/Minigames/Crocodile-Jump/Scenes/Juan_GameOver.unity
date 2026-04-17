@@ -197,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1909176855
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4721094819040403939, guid: de2fe2d8c9e6e5d4393768ba0712ca45, type: 3}
@@ -218,6 +218,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 206044557}
     m_Modifications:
+    - target: {fileID: 74587372882170695, guid: 51050b23dc2204f49ad67a48d444a3d6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 74587372882170695, guid: 51050b23dc2204f49ad67a48d444a3d6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2091309541
+      objectReference: {fileID: 0}
     - target: {fileID: 1348573493629833164, guid: 51050b23dc2204f49ad67a48d444a3d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.13
@@ -1149,7 +1157,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1771255265
+  m_SortingLayerID: 1021124295
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -1478,6 +1486,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 206044557}
     m_Modifications:
+    - target: {fileID: 74587372882170695, guid: 51050b23dc2204f49ad67a48d444a3d6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 74587372882170695, guid: 51050b23dc2204f49ad67a48d444a3d6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2091309541
+      objectReference: {fileID: 0}
     - target: {fileID: 1348573493629833164, guid: 51050b23dc2204f49ad67a48d444a3d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.95
@@ -2106,7 +2122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1909176855
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4721094819040403939, guid: de2fe2d8c9e6e5d4393768ba0712ca45, type: 3}
@@ -2861,7 +2877,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -901613531
+  m_SortingLayerID: 1974589429
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -3697,6 +3713,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 206044557}
     m_Modifications:
+    - target: {fileID: 1537274280912790044, guid: 561d8e0e0a07d43859930ba1c7dcff5c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537274280912790044, guid: 561d8e0e0a07d43859930ba1c7dcff5c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2091309541
+      objectReference: {fileID: 0}
     - target: {fileID: 4167087093598545042, guid: 561d8e0e0a07d43859930ba1c7dcff5c, type: 3}
       propertyPath: m_Name
       value: Cocodrilo
@@ -3928,7 +3952,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1909176855
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4721094819040403939, guid: de2fe2d8c9e6e5d4393768ba0712ca45, type: 3}

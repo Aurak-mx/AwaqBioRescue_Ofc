@@ -7,15 +7,17 @@ public class HubManager : MonoBehaviour
         SceneManager.LoadScene("MA_Home");
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void GoToCrocodileJump()
     {
-        
+        SceneManager.LoadScene("Juan_Menu");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoToMinigameMarcelo()
     {
-        
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void GoToMinigameLuis()
+    {
+        SceneManager.LoadScene("Game4");
     }
 }

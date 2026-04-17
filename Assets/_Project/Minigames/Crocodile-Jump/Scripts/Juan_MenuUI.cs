@@ -11,6 +11,6 @@ public class Juan_MenuUI : MonoBehaviour
     }
     public void ExitBtn()
     {
-        SceneManager.LoadScene("MinigamesMenu");
+        SceneManager.LoadScene("HubMinijuegos");
     }
 }
