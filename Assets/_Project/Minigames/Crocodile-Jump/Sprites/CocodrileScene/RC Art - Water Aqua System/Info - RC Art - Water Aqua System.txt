@@ -1,0 +1,41 @@
+Reactorcore Art (RC Art)
+==
+PACK: Water Aqua System
+
+--
+Reactorcore Art series variety pack.
+
+Pixel-art pack of seamlessly repeating textures for setting up a straight-forward static liquid system in a 2D side view game.
+
+Includes graphics for water, acid and lava with many variants!
+
+Decide a water surface height and cover the entire level from edge to edge vertically and horizontally with tiling textures, including both a background and foreground layer. Any game objects would go between the two water BG/FG layers, meanwhile any solid terrain would go on infront of everything.
+
+Easy to set up as a visual background environment, but also relatively easy to implement physics behavior by marking anything below the surface to be affected by buyoancy forces, friction, depth pressure and make objects spawn bubble particle systems when they move or idle within the liquid area.
+
+As far as water physics solutions would go, this one is the easiest and most performance friendly, plus the water level can be raised or lowered dynamically too!
+
+This asset pack provides you only with flexible selection of graphics to set up a simplified 2D side view liquid system, but you'll have to implement the code mechanics yourself that suit your particular game.
+
+--
+
+How to set up your water/acid/lava:
+
+1. Build out your solid terrain and assume that everything below a specific height will be designated as "submerged". This is how you will design levels.
+2. Place the background water textures BEHIND the solid terrain, behind everything. Near the surface, use the "Surface Background" textures, and extending downward, use "Background" water textures.
+3. Next, place the "Foreground" and "Surface Foreground" water seamless textures, to create a 3D-effect that anything is indeed submerged in the water.
+4. Your game characters, items, props, etc, would exist sorted between Background Water and Terrain layers. And Foreground Water would be drawn over game characters, but UNDER terrain, z-sorting wise.
+5. Visually, you now have levels with solid terrain and designated water zone below a specific height on the map. Now you can code in your game logic to apply different behaviour when your character or items are below or above the water surface level. These depend on your particular game, so its up to you.
+
+The water textures are seamlessly repeating tiling textures, so you can take one rectangle, slap a texture on it, stretch the rectangle and set the texture to repeat mode so it repeats instead of stretching.
+
+--
+
+By default in image import settings, all sprites/textures have been set to 32 pixels per unit and using a point filter so they appear crisp.
+
+--
+
+Contact:
+mailto:reactorcoregames@gmail.com
+
+Enjoy!
