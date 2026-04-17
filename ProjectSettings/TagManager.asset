@@ -2,13 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Plataforma
+  - Suelo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Jugador
   - Water
   - UI
   - 
@@ -41,3 +43,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Agua
+    uniqueID: 1021124295
+    locked: 0
+  - name: Hojas
+    uniqueID: 2766661185
+    locked: 0
+  - name: Decoracion
+    uniqueID: 1156929983
+    locked: 0
+  - name: Suelo
+    uniqueID: 1974589429
+    locked: 0
+  - name: Jugador
+    uniqueID: 2091309541
+    locked: 0
+  m_RenderingLayers:
+  - Default
