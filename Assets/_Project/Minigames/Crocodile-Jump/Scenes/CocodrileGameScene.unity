@@ -13383,7 +13383,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFSu objetivo es luchar contra...?"
+      value: "\xBFEl objetivo de AWAQ es luchar contra...?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -13480,7 +13480,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 modelo econ\xF3mico siguen?"
+      value: "\xBFQu\xE9 modelo econ\xF3mico sigue AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -13998,7 +13998,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 conocimiento valoran?"
+      value: "\xBFQu\xE9 conocimiento valoran en AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -15595,7 +15595,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 es el \"Green Hub\"?"
+      value: "\xBFQu\xE9 es el \"Green Hub\" de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -15955,7 +15955,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 es el Corredor Biol\xF3gico?"
+      value: "\xBFQu\xE9 es el Corredor Biol\xF3gico de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -26264,8 +26264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 36.05603, y: 0.8268738}
+  m_SizeDelta: {x: 68.44, y: 54.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &864809711
 CanvasRenderer:
@@ -26295,7 +26295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -173272114442480858, guid: b19278cfc1c6e4ff7979548f5b175fff, type: 3}
+  m_Sprite: {fileID: 4574027285297382254, guid: ea367302e9d3348c38b5790027b62c89, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26485,7 +26485,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 buscan conectar?"
+      value: "\xBFQu\xE9 busca conectar AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -26834,7 +26834,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFA qui\xE9nes integran primero?"
+      value: "\xBFA qui\xE9nes integran primero en AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -27021,7 +27021,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 tecnolog\xEDa usan para fauna?"
+      value: "\xBFQu\xE9 tecnolog\xEDa usa AWAQ para fauna?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -29472,7 +29472,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 usan para mapear el bosque?"
+      value: "\xBFQu\xE9 usa AWAQ para mapear el bosque?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -30051,7 +30051,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFCu\xE1l es su pilar fundamental?"
+      value: "\xBFCu\xE1l es su pilar fundamental de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -31020,7 +31020,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 tipo de entidad es?"
+      value: "\xBFQu\xE9 tipo de entidad es AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -31208,7 +31208,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 pa\xEDs es su centro operativo?"
+      value: "\xBFQu\xE9 pa\xEDs es el centro operativo de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -33763,7 +33763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6830696874836009146, guid: aa9686a77de894c61b97457128877a80, type: 3}
+  m_Sprite: {fileID: -1801075357908177235, guid: ea367302e9d3348c38b5790027b62c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35232,7 +35232,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFCu\xE1l es su meta clim\xE1tica?"
+      value: "\xBFCu\xE1l es la meta clim\xE1tica de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -35964,7 +35964,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFCu\xE1l es una especie clave monitoreada?"
+      value: "\xBFCu\xE1l es una especie clave monitoreada de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -36220,7 +36220,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFQu\xE9 promueven en los j\xF3venes?"
+      value: "\xBFQu\xE9 promueve AWAQ en los j\xF3venes?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -36456,7 +36456,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFC\xF3mo protegen las fuentes h\xEDdricas?"
+      value: "\xBFC\xF3mo protege AWAQ las fuentes h\xEDdricas?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI
@@ -38140,7 +38140,7 @@ PrefabInstance:
       objectReference: {fileID: 1827313636}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: pregunta
-      value: "\xBFCu\xE1l es su labor principal?"
+      value: "\xBFCu\xE1l es el labor principal de AWAQ?"
       objectReference: {fileID: 0}
     - target: {fileID: 948700784782285888, guid: 200adf637d6e2414ab73bce89cbbffa3, type: 3}
       propertyPath: preguntaUI

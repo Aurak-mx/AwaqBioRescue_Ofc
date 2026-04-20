@@ -57,7 +57,7 @@ public class Juan_UIController : MonoBehaviour
 
         tiempo--;
 
-        float minFill = 0.238f;
+        float minFill = 0f;
         float porcentaje = (float)tiempo / Juan_GameControl.Instance.tiempoJuego;
 
         barraTiempo.fillAmount = minFill + (porcentaje * (1f - minFill));
@@ -96,11 +96,11 @@ public class Juan_UIController : MonoBehaviour
     {
         float fill = barraTiempo.fillAmount;
 
-        if (fill > 0.688f)
+        if (fill > 0.727f)
         {
             return 200;
         }
-        else if (fill > 0.441f)
+        else if (fill > 0.483f)
         {
             return 100;
         }
