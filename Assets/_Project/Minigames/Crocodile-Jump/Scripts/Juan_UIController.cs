@@ -96,11 +96,11 @@ public class Juan_UIController : MonoBehaviour
     {
         float fill = barraTiempo.fillAmount;
 
-        if (fill > 0.727f)
+        if (fill > 0.679f)
         {
             return 200;
         }
-        else if (fill > 0.483f)
+        else if (fill > 0.325f)
         {
             return 100;
         }
