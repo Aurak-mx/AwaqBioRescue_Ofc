@@ -49,8 +49,3 @@ public class PuntajeData
 {
     public int? puntaje_total;
 }
-
-public class ForceAcceptAll : CertificateHandler
-{
-    protected override bool ValidateCertificate(byte[] certificateData) { return true; }
-}
