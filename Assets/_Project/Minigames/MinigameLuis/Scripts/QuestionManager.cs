@@ -105,17 +105,17 @@ public class QuestionManager : MonoBehaviour
         if (timeRemaining >= 120f)
         {
             medalOro.SetActive(true);
-            totemText.text = "1000 Totems";
+            totemText.text = "1200 Totems";
         }
         else if (timeRemaining >= 60f)
         {
             medalPlata.SetActive(true);
-            totemText.text = "750 Totems";
+            totemText.text = "850 Totems";
         }
         else
         {
             medalBronce.SetActive(true);
-            totemText.text = "500 Totems";
+            totemText.text = "600 Totems";
         }
 
         winPanel.SetActive(true);
@@ -290,6 +290,10 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
+    public void IrAlJuego()
+    {
+        SceneManager.LoadScene("Game4");
+    }
     public bool IsQuestionActive() { return questionActive; }
     public bool IsGameEnded() { return gameEnded; }
 }
