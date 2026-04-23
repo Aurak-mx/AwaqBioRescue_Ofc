@@ -97,3 +97,15 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# macOS Finder metadata
+.DS_Store
+
+# VSCode workspace settings (per-developer)
+.vscode/
+
+# Unity's newer XML solution file (auto-regenerated per machine, like .sln)
+*.slnx
+
+# TextMesh Pro built-in demo content (re-exported on every Unity reinstall)
+/[Aa]ssets/TextMesh Pro/Examples & Extras/
