@@ -45,6 +45,7 @@ public class GameTimer : MonoBehaviour
     }
 
     // Detiene el timer, se llama cuando el juego termina (ganas o pierdes)
+    // Detiene el timer, se llama cuando el juego termina (ganas o pierdes)
     public void StopTimer() { timerRunning = false; }
 
     // Regresa el tiempo actual, se usa para calcular la medalla al ganar

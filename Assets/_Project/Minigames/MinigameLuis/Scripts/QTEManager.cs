@@ -77,5 +77,5 @@ public class QTEManager : MonoBehaviour
         AudioManager.instance.PlayIncorrecto(); // Sonido de incorrecto al fallar el QTE
         animalSpawner.OnQTEFinished(false);
     }
-   
+
 }

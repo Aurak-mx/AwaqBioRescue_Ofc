@@ -2216,7 +2216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6300723182254769599, guid: 0e5364c8373f0024caed8b297c59a288, type: 3}
+  m_Sprite: {fileID: 3944737260373816256, guid: 7c8af4d73e9c92b4598151ca028fc260, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3738,6 +3738,7 @@ GameObject:
   - component: {fileID: 1549581164}
   - component: {fileID: 1549581163}
   - component: {fileID: 1549581162}
+  - component: {fileID: 1549581165}
   m_Layer: 5
   m_Name: Exit_Btn (1)
   m_TagString: Untagged
@@ -3858,6 +3859,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549581160}
   m_CullTransparentMesh: 1
+--- !u!114 &1549581165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549581160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5490ba9bb3fc94fb972be5c20653a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicaFondo: {fileID: 0}
+  volumenFondo: 0.5
+  sonidoPregunta: {fileID: 0}
+  volumenPregunta: 1
+  sonidoCorrecto: {fileID: 0}
+  volumenCorrecto: 1
+  sonidoIncorrecto: {fileID: 0}
+  volumenIncorrecto: 1
+  sonidoPeligro: {fileID: 0}
+  volumenPeligro: 1
+  sonidoCocodrilo: {fileID: 0}
+  volumenCocodrilo: 1
+  sonidoPajaro: {fileID: 0}
+  volumenPajaro: 1
+  sonidoGanar: {fileID: 0}
+  volumenGanar: 1
+  sonidoPerder: {fileID: 0}
+  volumenPerder: 1
+  sonidoBoton: {fileID: 0}
+  volumenBoton: 1
 --- !u!1 &1566232947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,9 +4056,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a011a80c21788434fb207e608cb670c7, type: 3}
+  m_Resource: {fileID: 8300000, guid: d687c021ff1d665409482744f1728688, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 0e5364c8373f0024caed8b297c59a288
+guid: 7c8af4d73e9c92b4598151ca028fc260
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6300723182254769599
-    second: Mouse-removebg-preview_0
+      213: 3944737260373816256
+    second: Mouse__0
   - first:
-      213: 6117669294623024312
-    second: Mouse-removebg-preview_1
+      213: -8397028691097738245
+    second: Mouse__1
   - first:
-      213: -5115964310314656721
-    second: Mouse-removebg-preview_2
+      213: -898489577751502758
+    second: Mouse__2
   - first:
-      213: -1113007704683355096
-    second: Mouse-removebg-preview_3
+      213: -9083356930526658327
+    second: Mouse__3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mouse-removebg-preview_0
+      name: Mouse__0
       rect:
         serializedVersion: 2
-        x: 144
-        y: 97
-        width: 159
-        height: 254
+        x: 160
+        y: 104
+        width: 180
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb54d520a5aa07750800000000000000
-      internalID: 6300723182254769599
+      spriteID: 0c334d063a58eb630800000000000000
+      internalID: 3944737260373816256
       vertices: []
       indices: 
       edges: []
@@ -173,7 +173,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fc6bf88c4ae78d94e846d96bde5a93b7
+    spriteID: 4147d326c1098574293d72a6ea54ea96
     internalID: 0
     vertices: []
     indices: 
@@ -183,10 +183,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mouse-removebg-preview_0: 6300723182254769599
-      Mouse-removebg-preview_1: 6117669294623024312
-      Mouse-removebg-preview_2: -5115964310314656721
-      Mouse-removebg-preview_3: -1113007704683355096
+      Mouse__0: 3944737260373816256
+      Mouse__1: -8397028691097738245
+      Mouse__2: -898489577751502758
+      Mouse__3: -9083356930526658327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
