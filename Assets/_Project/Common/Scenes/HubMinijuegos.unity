@@ -234,7 +234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4865635226373620021, guid: 2d90d7258cbae7d40815419a994bcd3f, type: 3}
+  m_Sprite: {fileID: 5107689320411105715, guid: 5c4ee2eb087014f999306c0c9e9b58e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1605,6 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7d5fef81fee424eb8608e4b80f9ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HubManager
+  textoUsuario: {fileID: 827250226}
 --- !u!4 &1517516557
 Transform:
   m_ObjectHideFlags: 0

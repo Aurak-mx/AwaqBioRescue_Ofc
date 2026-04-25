@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Project/Common/Scenes/Login.unity
+    guid: 391425288b5284682b550985d38f3c97
+  - enabled: 1
     path: Assets/_Project/Minigames/MinigameMarcelo/Scenes/MainMenu.unity
     guid: fe306464465bd48cba14e3ebd8494091
   - enabled: 1

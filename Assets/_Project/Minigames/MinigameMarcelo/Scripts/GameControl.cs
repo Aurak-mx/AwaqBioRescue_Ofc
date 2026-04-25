@@ -16,6 +16,8 @@ public class GameControl : MonoBehaviour
 
     public SFXManager sfxManager; // Instancia de SFXManager para generar sonido en sistema
 
+    private int idMedalla;
+
     // Función que corre el momento que inicia el juego
     public void Awake()
     {
