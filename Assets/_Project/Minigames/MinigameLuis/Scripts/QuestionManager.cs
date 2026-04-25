@@ -32,7 +32,7 @@ public class QuestionManager : MonoBehaviour
 
     [Header("Configuracion")]
     public float timeLimit = 10f;
-    public float delayToShow = 2f;
+    public float delayToShow = 1.5f;
 
     [Header("Referencias")]
     public ChainGrabSystem chainSystem;
@@ -130,8 +130,11 @@ public class QuestionManager : MonoBehaviour
     {
         AudioManager.instance.PlayBoton();
         Time.timeScale = 1f;
-        // SceneManager.LoadScene("MenuScene");
-        Debug.Log("Volver al Menu");
+        Invoke("Menu", 0.2f);
+    }
+    void Menu()
+    {
+        SceneManager.LoadScene("HubMinijuegos");
     }
 
     void NextLevel()
