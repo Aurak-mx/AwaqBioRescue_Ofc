@@ -10,8 +10,9 @@ public class AnimalSpawner : MonoBehaviour
     public GameObject bird;      // Objeto del pajaro en la escena
 
     [Header("Configuracion")]
-    public float minTime = 1.5f; // Tiempo minimo entre apariciones de animales
-    public float maxTime = 12f;  // Tiempo maximo entre apariciones de animales
+    public float minTime = 8f;  // Tiempo minimo entre apariciones de animales
+    public float maxTime = 20f; // Tiempo maximo entre apariciones de animales
+    public float cooldownAfterAnimal = 8f; // Tiempo garantizado sin animales despues de cada evento
 
     [Header("Referencias")]
     public ChainGrabSystem chainSystem;    // Para saber en que eslabon esta el jugador
@@ -118,15 +119,18 @@ public class AnimalSpawner : MonoBehaviour
             bird.SetActive(false);
         }
 
-        // Resetea la cadena y espera a que termine antes de reanudar la pregunta
+        // Resetea la cadena y espera a que termine
         chainSystem.ResetChainPosition();
         yield return new WaitForSeconds(1.5f);
 
-        waitingForAnimation = false;
-
-        // Reactiva la pregunta que estaba pausada
+        // Reactiva la pregunta primero para que el jugador pueda responder durante el cooldown
         if (!questionManager.IsGameEnded())
             questionManager.ResumeQuestion();
+
+        // Cooldown garantizado: ningun animal puede aparecer hasta que esto termine
+        yield return new WaitForSecondsRealtime(cooldownAfterAnimal);
+
+        waitingForAnimation = false;
     }
 
     // El QTEManager llama este metodo para informar si el jugador paso o fallo
