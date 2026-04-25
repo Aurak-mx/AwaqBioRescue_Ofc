@@ -18,6 +18,6 @@ public class HubManager : MonoBehaviour
     }
     public void GoToMinigameLuis()
     {
-        SceneManager.LoadScene("Game4");
+        SceneManager.LoadScene("MenuGame4");
     }
 }
