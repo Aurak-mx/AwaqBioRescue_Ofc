@@ -132,6 +132,14 @@ public class QuestionManager : MonoBehaviour
         Time.timeScale = 1f;
         Invoke("Menu", 0.2f);
     }
+
+    public void Inicio()
+    {
+        AudioManager.instance.PlayBoton();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MenuGame4");
+    }
+
     void Menu()
     {
         SceneManager.LoadScene("HubMinijuegos");
