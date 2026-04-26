@@ -57,7 +57,6 @@ public class PauseManager : MonoBehaviour
     {
         AudioManager.instance.PlayBoton(); // Sonido al ir al menu
         Time.timeScale = 1f;
-        // SceneManager.LoadScene("MenuScene");
-        Debug.Log("Ir al Menu");
+        SceneManager.LoadScene("HubMinijuegos");
     }
 }
