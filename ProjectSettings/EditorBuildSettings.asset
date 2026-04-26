@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Project/Common/Scenes/Login.unity
+    guid: 391425288b5284682b550985d38f3c97
+  - enabled: 1
     path: Assets/_Project/Minigames/MinigameMarcelo/Scenes/MainMenu.unity
     guid: fe306464465bd48cba14e3ebd8494091
   - enabled: 1
@@ -47,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Common/Scenes/HubMinijuegos.unity
     guid: 23848080f209aa541bac448860a5ab02
+  - enabled: 1
+    path: Assets/_Project/Minigames/MinigameLuis/Scenes/MenuGame4.unity
+    guid: 24c40c0faca767046ba7013984cddd61
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

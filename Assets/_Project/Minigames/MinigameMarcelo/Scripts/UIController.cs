@@ -45,6 +45,9 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI endXpText; 
     public TextMeshProUGUI endMedalText; 
 
+    private int idMedalla;
+    public APIManager apiManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -254,21 +257,29 @@ public class UIController : MonoBehaviour
         {
             finalMedalImage.sprite = medalGold; // Asignar a el final medal image la imágen de gold medal
             finalMedalImage.gameObject.SetActive(true); // Despliegar medalla
+            idMedalla = 1;
+            apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 4, idMedalla);
         }
         else if ( medal == "Plata")
         {
             finalMedalImage.sprite = medalSilver; // Asignar a el final medal image la imágen de silver medal
             finalMedalImage.gameObject.SetActive(true); // Despliegar medalla
+            idMedalla = 2;
+            apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 4, idMedalla);
         }
         else if ( medal == "Bronce")
         {
             finalMedalImage.sprite = medalBronze; // Asignar a el final medal image la imágen de bronze medal
             finalMedalImage.gameObject.SetActive(true); // Despliegar medalla
+            idMedalla = 3;
+            apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 4, idMedalla);
         }
         else if ( medal == "Platino (Pacifista)")
         {
             finalMedalImage.sprite = medalPlatino;
             finalMedalImage.gameObject.SetActive(true);
+            idMedalla = 1;
+            apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 4, idMedalla);
         }
         else
         {

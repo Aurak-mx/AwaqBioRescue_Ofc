@@ -15,7 +15,7 @@ public class Juan_WinUI : MonoBehaviour
     public Sprite medallaOro;
 
     [Header("API")]
-    public Juan_APIManager apiManager; 
+    public APIManager apiManager; 
 
     int puntos;
     int idMedalla;
@@ -49,11 +49,9 @@ public class Juan_WinUI : MonoBehaviour
             idMedalla = 3;  
         }
 
-        // Enviamos la medalla al servidor
-        int idUsuario = PlayerPrefs.GetInt("UserID", 1); 
         if (apiManager != null)
         {
-            apiManager.SendPostMedalla(3, 1, idMedalla);
+            apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 2, idMedalla);
         }
     }
 
