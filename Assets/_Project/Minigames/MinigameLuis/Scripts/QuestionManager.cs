@@ -126,15 +126,11 @@ public class QuestionManager : MonoBehaviour
         winButton2.GetComponent<Button>().onClick.AddListener(GoToMenu);
     }
 
-    void GoToMenu()
+    public void GoToMenu()
     {
-        AudioManager.instance.PlayBoton();
+        AudioManager.instance.PlayBoton(); // Sonido al ir al menu
         Time.timeScale = 1f;
-        Invoke("Menu", 0.2f);
-    }
-    void Menu()
-    {
-        SceneManager.LoadScene("HubMinijuegos");
+        SceneManager.LoadScene("MenuGame4");
     }
 
     void NextLevel()
