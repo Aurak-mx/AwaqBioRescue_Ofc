@@ -7,31 +7,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System;
 
-[Serializable]
-public class PreguntaData
-{
-    public string pregunta;
-    public string opcion1;
-    public string opcion2;
-    public string opcion3;
-    public string opcion4;
-    public int opcion_correcta;
-}
-
-[Serializable]
-public class PreguntasResponse
-{
-    public bool success;
-    public List<PreguntaData> data;
-}
-
-public class BypassCertificate : CertificateHandler
-{
-    protected override bool ValidateCertificate(byte[] certificateData) => true;
-}
-
 public class MA_PlatformManager : MonoBehaviour
 {
+    public APIManager apiManager;
+
     public List<GameObject> plataformas;
     public float tiempoLimite = 5f;
 
@@ -51,9 +30,8 @@ public class MA_PlatformManager : MonoBehaviour
 
     private int nivelActual = 0;
 
-    private List<PreguntaData> preguntasAPI = new List<PreguntaData>();
+    private List<APIManager.PreguntaData> preguntasAPI = new List<APIManager.PreguntaData>();
     private bool preguntasCargadas = false;
-    private const string API_URL = "https://127.0.0.1:5001/unity/preguntas";
 
     private int plataformaCorrecta = 1;
     private int plataformaJugador = -1;
@@ -90,46 +68,42 @@ public class MA_PlatformManager : MonoBehaviour
             corazones[i].enabled = i < vidas;
         }
 
-        StartCoroutine(CargarPreguntasDesdeAPI());
+        CargarPreguntasDesdeAPI();
     }
 
-    IEnumerator CargarPreguntasDesdeAPI()
+    void CargarPreguntasDesdeAPI()
     {
         textoPregunta.text = "Cargando preguntas...";
 
-        using (UnityWebRequest request = UnityWebRequest.Get(API_URL))
+        if (apiManager == null)
         {
-            request.certificateHandler = new BypassCertificate();
-            yield return request.SendWebRequest();
+            Debug.LogError("APIManager no asignado en MA_PlatformManager.");
+            textoPregunta.text = "Sin conexión";
+            Invoke(nameof(CargarPreguntasDesdeAPI), 3f);
+            return;
+        }
 
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                string json = request.downloadHandler.text;
-                PreguntasResponse respuesta = JsonUtility.FromJson<PreguntasResponse>(json);
+        apiManager.GetPreguntas(OnPreguntasRecibidas);
+    }
 
-                if (respuesta != null && respuesta.success && respuesta.data.Count > 0)
-                {
-                    preguntasAPI = respuesta.data;
-                    preguntasCargadas = true;
+    void OnPreguntasRecibidas(List<APIManager.PreguntaData> lista)
+    {
+        if (lista != null && lista.Count > 0)
+        {
+            preguntasAPI = lista;
+            preguntasCargadas = true;
 
-                    ordenPreguntas.Clear();
-                    for (int i = 0; i < preguntasAPI.Count; i++)
-                        ordenPreguntas.Add(i);
+            ordenPreguntas.Clear();
+            for (int i = 0; i < preguntasAPI.Count; i++)
+                ordenPreguntas.Add(i);
 
-                    MezclarPreguntas();
-                    StartGame();
-                }
-                else
-                {
-                    textoPregunta.text = "Error.";
-                }
-            }
-            else
-            {
-                textoPregunta.text = "Sin conexión";
-                yield return new WaitForSeconds(3f);
-                StartCoroutine(CargarPreguntasDesdeAPI());
-            }
+            MezclarPreguntas();
+            StartGame();
+        }
+        else
+        {
+            textoPregunta.text = "Sin conexión";
+            Invoke(nameof(CargarPreguntasDesdeAPI), 3f);
         }
     }
 
@@ -155,7 +129,7 @@ public class MA_PlatformManager : MonoBehaviour
         tiempoActual = tiempoLimite;
 
         int preguntaIndex = ordenPreguntas[nivelActual];
-        PreguntaData pregunta = preguntasAPI[preguntaIndex];
+        APIManager.PreguntaData pregunta = preguntasAPI[preguntaIndex];
 
         textoPregunta.text = pregunta.pregunta;
 

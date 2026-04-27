@@ -50,6 +50,22 @@ public class APIManager : MonoBehaviour
         public string fecha_obtencion { get; set; }
     }
 
+    public class PreguntaData
+    {
+        public string pregunta         { get; set; }
+        public string opcion1          { get; set; }
+        public string opcion2          { get; set; }
+        public string opcion3          { get; set; }
+        public string opcion4          { get; set; }
+        public int    opcion_correcta  { get; set; }
+    }
+
+    private class PreguntasResponse
+    {
+        public bool success { get; set; }
+        public List<PreguntaData> data { get; set; }
+    }
+
     // ─── LOGIN ──────────────────────────────────────────────────
 
     /// <summary>
@@ -216,6 +232,40 @@ public class APIManager : MonoBehaviour
             List<MedallaUsuario> lista = new List<MedallaUsuario>();
             lista = JsonConvert.DeserializeObject<List<MedallaUsuario>>(web.downloadHandler.text);
             onResult?.Invoke(lista);
+        }
+    }
+
+    // ─── PREGUNTAS ──────────────────────────────────────────────
+
+    /// <summary>
+    /// Obtiene las preguntas del minijuego El Risco. Devuelve una lista de PreguntaData.
+    /// Uso: GetPreguntas((lista) => { ... });
+    /// </summary>
+    public void GetPreguntas(Action<List<PreguntaData>> onResult)
+    {
+        StartCoroutine(GetPreguntasCoroutine(onResult));
+    }
+
+    private IEnumerator GetPreguntasCoroutine(Action<List<PreguntaData>> onResult)
+    {
+        string endpoint = $"{BaseUrl}/unity/preguntas";
+
+        UnityWebRequest web = UnityWebRequest.Get(endpoint);
+        web.certificateHandler = new ForceAcceptAll();
+        yield return web.SendWebRequest();
+
+        if (web.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error API: " + web.error);
+            onResult?.Invoke(new List<PreguntaData>());
+        }
+        else
+        {
+            PreguntasResponse respuesta = JsonConvert.DeserializeObject<PreguntasResponse>(web.downloadHandler.text);
+            if (respuesta != null && respuesta.success && respuesta.data != null)
+                onResult?.Invoke(respuesta.data);
+            else
+                onResult?.Invoke(new List<PreguntaData>());
         }
     }
 }

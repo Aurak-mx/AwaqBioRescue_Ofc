@@ -6704,6 +6704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787940919}
   - component: {fileID: 787940918}
+  - component: {fileID: 787940920}
   m_Layer: 0
   m_Name: PlatformManager
   m_TagString: Untagged
@@ -6723,6 +6724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff511710e5533ff48bbef06ec6af8d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformManager
+  apiManager: {fileID: 787940920}
   plataformas:
   - {fileID: 1807318583}
   - {fileID: 39238553}
@@ -6793,6 +6795,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 358310771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787940920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787940917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c2630ee303b440abb36ed41161d92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::APIManager
 --- !u!1 &791111235
 GameObject:
   m_ObjectHideFlags: 0
