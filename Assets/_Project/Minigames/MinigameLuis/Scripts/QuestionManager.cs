@@ -38,6 +38,11 @@ public class QuestionManager : MonoBehaviour
     public ChainGrabSystem chainSystem;
     public GameTimer gameTimer;
 
+    [Header("API")]
+    public APIManager apiManager;
+
+    int idMedalla;
+
     private List<Question> questionBank = new List<Question>();
     private Question currentQuestion;
     private bool correctIsButton1;
@@ -106,16 +111,24 @@ public class QuestionManager : MonoBehaviour
         {
             medalOro.SetActive(true);
             totemText.text = "1200 Totems";
+            idMedalla = 1;
         }
         else if (timeRemaining >= 60f)
         {
             medalPlata.SetActive(true);
             totemText.text = "850 Totems";
+            idMedalla = 2;
         }
         else
         {
             medalBronce.SetActive(true);
             totemText.text = "600 Totems";
+            idMedalla = 3;
+        }
+
+        if (apiManager != null)
+        {
+            apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 3, idMedalla);
         }
 
         winPanel.SetActive(true);
