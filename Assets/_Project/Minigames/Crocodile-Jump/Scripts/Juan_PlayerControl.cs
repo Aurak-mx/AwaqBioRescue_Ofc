@@ -31,11 +31,11 @@ public class Juan_PlayerControl : MonoBehaviour
     {
         
         xInput = 0f;
-        if (Keyboard.current.dKey.isPressed)
+        if (Keyboard.current.rightArrowKey.isPressed)
         {
             xInput = 1f; // Mover derecha
         }
-        else if (Keyboard.current.aKey.isPressed)
+        else if (Keyboard.current.leftArrowKey.isPressed)
         {
             xInput = -1f; // Mover izquierda
         }
@@ -47,7 +47,7 @@ public class Juan_PlayerControl : MonoBehaviour
         }
 
         // Solicitar salto si está en el suelo y se presiona espacio o W
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded || Keyboard.current.wKey.wasPressedThisFrame && isGrounded)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded || Keyboard.current.upArrowKey.wasPressedThisFrame && isGrounded)
         {
             jumpRequested = true;
             isGrounded = false; 
