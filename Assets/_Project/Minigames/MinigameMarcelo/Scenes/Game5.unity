@@ -1944,6 +1944,7 @@ GameObject:
   - component: {fileID: 228816961}
   - component: {fileID: 228816965}
   - component: {fileID: 228816966}
+  - component: {fileID: 228816967}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2109,6 +2110,7 @@ MonoBehaviour:
   endTitleText: {fileID: 1735186492}
   endXpText: {fileID: 1769733663}
   endMedalText: {fileID: 597257105}
+  apiManager: {fileID: 228816967}
 --- !u!114 &228816966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,6 +2126,18 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 638172048}
   panelRules1: {fileID: 1197151532}
   panelRules2: {fileID: 1789920993}
+--- !u!114 &228816967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228816960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c2630ee303b440abb36ed41161d92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::APIManager
 --- !u!1 &244022201
 GameObject:
   m_ObjectHideFlags: 0

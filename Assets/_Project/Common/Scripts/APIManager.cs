@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using System;
+using Newtonsoft.Json;
 
 public class APIManager : MonoBehaviour
 {
-    string BaseUrl = "https://192.168.4.251:3000";
+    string BaseUrl = "https://127.0.0.1:3000";
 
     // ─── MODELOS ────────────────────────────────────────────────
 
@@ -32,6 +34,20 @@ public class APIManager : MonoBehaviour
         public int id_usuario;
         public int id_medalla;
         public int id_rankmedalla;
+    }
+
+    public class PuntajeItem
+    {
+        public int id_medalla   { get; set; }
+        public int mejor_puntos { get; set; }
+    }
+
+    public class MedallaUsuario
+    {
+        public int    id_usuario      { get; set; }
+        public string medalla         { get; set; }
+        public string rank            { get; set; }
+        public string fecha_obtencion { get; set; }
     }
 
     // ─── LOGIN ──────────────────────────────────────────────────
@@ -136,6 +152,70 @@ public class APIManager : MonoBehaviour
                 Debug.LogError("Error API: " + web.error);
             else
                 Debug.Log("Medalla enviada correctamente: " + web.downloadHandler.text);
+        }
+    }
+
+    // ─── PUNTAJE ────────────────────────────────────────────────
+
+    /// <summary>
+    /// Obtiene el puntaje del usuario por id. Devuelve una lista con el mejor puntaje por minijuego.
+    /// Uso: GetPuntaje(28, (lista) => { ... });
+    /// </summary>
+    public void GetPuntaje(int idUsuario, Action<List<PuntajeItem>> onResult)
+    {
+        StartCoroutine(GetPuntajeCoroutine(idUsuario, onResult));
+    }
+
+    private IEnumerator GetPuntajeCoroutine(int idUsuario, Action<List<PuntajeItem>> onResult)
+    {
+        string endpoint = $"{BaseUrl}/puntaje/{idUsuario}";
+
+        UnityWebRequest web = UnityWebRequest.Get(endpoint);
+        web.certificateHandler = new ForceAcceptAll();
+        yield return web.SendWebRequest();
+
+        if (web.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error API: " + web.error);
+            onResult?.Invoke(new List<PuntajeItem>());
+        }
+        else
+        {
+            List<PuntajeItem> lista = new List<PuntajeItem>();
+            lista = JsonConvert.DeserializeObject<List<PuntajeItem>>(web.downloadHandler.text);
+            onResult?.Invoke(lista);
+        }
+    }
+
+    // ─── MEDALLAS ───────────────────────────────────────────────
+
+    /// <summary>
+    /// Obtiene las medallas del usuario por id. Devuelve una lista con todas las medallas obtenidas.
+    /// Uso: GetMedallas(28, (lista) => { ... });
+    /// </summary>
+    public void GetMedallas(int idUsuario, Action<List<MedallaUsuario>> onResult)
+    {
+        StartCoroutine(GetMedallasCoroutine(idUsuario, onResult));
+    }
+
+    private IEnumerator GetMedallasCoroutine(int idUsuario, Action<List<MedallaUsuario>> onResult)
+    {
+        string endpoint = $"{BaseUrl}/medallas/{idUsuario}";
+
+        UnityWebRequest web = UnityWebRequest.Get(endpoint);
+        web.certificateHandler = new ForceAcceptAll();
+        yield return web.SendWebRequest();
+
+        if (web.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error API: " + web.error);
+            onResult?.Invoke(new List<MedallaUsuario>());
+        }
+        else
+        {
+            List<MedallaUsuario> lista = new List<MedallaUsuario>();
+            lista = JsonConvert.DeserializeObject<List<MedallaUsuario>>(web.downloadHandler.text);
+            onResult?.Invoke(lista);
         }
     }
 }

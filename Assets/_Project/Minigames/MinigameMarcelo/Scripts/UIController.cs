@@ -278,7 +278,7 @@ public class UIController : MonoBehaviour
         {
             finalMedalImage.sprite = medalPlatino;
             finalMedalImage.gameObject.SetActive(true);
-            idMedalla = 1;
+            idMedalla = 4;
             apiManager.SendPostMedalla(PlayerPrefs.GetInt("id_usuario"), 4, idMedalla);
         }
         else
