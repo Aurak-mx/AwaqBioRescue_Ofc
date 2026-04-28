@@ -8,7 +8,6 @@ using Newtonsoft.Json;
 
 public class APIManager : MonoBehaviour
 {
-    string BaseUrl = "http://127.0.0.1:3000";
 
     // ─── MODELOS ────────────────────────────────────────────────
 
@@ -79,7 +78,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator LoginCoroutine(string username, string password, Action<UsuarioResponse> onResult)
     {
-        string endpoint = $"{BaseUrl}/obtenerUsuarioPorNombre";
+        string endpoint = $"https://10.14.255.42:3000/obtenerUsuarioPorNombre";
 
         // 1) Buscamos el usuario por nombre
         var reqBody = new LoginRequest { username = username };
@@ -143,7 +142,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator PostMedallaCoroutine(int _id_usuario, int _id_medalla, int id_rankmedalla)
     {
-        string endpoint = $"{BaseUrl}/PostMedalla";
+        string endpoint = $"https://10.14.255.42:3000/PostMedalla";
 
         var medalla = new Medalla
         {
@@ -184,7 +183,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetPuntajeCoroutine(int idUsuario, Action<List<PuntajeItem>> onResult)
     {
-        string endpoint = $"{BaseUrl}/puntaje/{idUsuario}";
+        string endpoint = $"https://10.14.255.42:3003/puntaje/{idUsuario}";
 
         UnityWebRequest web = UnityWebRequest.Get(endpoint);
         web.certificateHandler = new ForceAcceptAll();
@@ -216,7 +215,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetMedallasCoroutine(int idUsuario, Action<List<MedallaUsuario>> onResult)
     {
-        string endpoint = $"{BaseUrl}/medallas/{idUsuario}";
+        string endpoint = $"https://10.14.255.42:3001/medallas/{idUsuario}";
 
         UnityWebRequest web = UnityWebRequest.Get(endpoint);
         web.certificateHandler = new ForceAcceptAll();
@@ -248,7 +247,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetPreguntasCoroutine(Action<List<PreguntaData>> onResult)
     {
-        string endpoint = $"{BaseUrl}/unity/preguntas";
+        string endpoint = $"https://10.14.255.42:3001/unity/preguntas";
 
         UnityWebRequest web = UnityWebRequest.Get(endpoint);
         web.certificateHandler = new ForceAcceptAll();
