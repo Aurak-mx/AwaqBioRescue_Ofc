@@ -3802,7 +3802,7 @@ MonoBehaviour:
   sonidoPerder: {fileID: 8300000, guid: da64257c27f9acf48a956566633c067c, type: 3}
   volumenPerder: 0.7
   sonidoBoton: {fileID: 8300000, guid: e4d26b498f9fa1047abd578d9e6f366c, type: 3}
-  volumenBoton: 1
+  volumenBoton: 0.2
 --- !u!4 &478539703
 Transform:
   m_ObjectHideFlags: 0
