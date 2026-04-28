@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 public class APIManager : MonoBehaviour
 {
 
-    // ─── MODELOS ────────────────────────────────────────────────
+    //  MODELOS 
 
     [Serializable]
     private class LoginRequest
@@ -65,12 +65,8 @@ public class APIManager : MonoBehaviour
         public List<PreguntaData> data { get; set; }
     }
 
-    // ─── LOGIN ──────────────────────────────────────────────────
+    //  LOGIN 
 
-    /// <summary>
-    /// Llama al login. El callback regresa el usuario si fue exitoso, o null si falló.
-    /// Uso: SendLogin("juan", "1234", (usuario) => { ... });
-    /// </summary>
     public void SendLogin(string username, string password, Action<UsuarioResponse> onResult)
     {
         StartCoroutine(LoginCoroutine(username, password, onResult));
@@ -133,7 +129,7 @@ public class APIManager : MonoBehaviour
         public UsuarioResponse[] items;
     }
 
-    // ─── MEDALLA ────────────────────────────────────────────────
+    //  MEDALLA 
 
     public void SendPostMedalla(int idUsuario, int idMedalla, int idRankMedalla)
     {
@@ -170,12 +166,8 @@ public class APIManager : MonoBehaviour
         }
     }
 
-    // ─── PUNTAJE ────────────────────────────────────────────────
+    //  PUNTAJE 
 
-    /// <summary>
-    /// Obtiene el puntaje del usuario por id. Devuelve una lista con el mejor puntaje por minijuego.
-    /// Uso: GetPuntaje(28, (lista) => { ... });
-    /// </summary>
     public void GetPuntaje(int idUsuario, Action<List<PuntajeItem>> onResult)
     {
         StartCoroutine(GetPuntajeCoroutine(idUsuario, onResult));
@@ -202,12 +194,8 @@ public class APIManager : MonoBehaviour
         }
     }
 
-    // ─── MEDALLAS ───────────────────────────────────────────────
+    //  MEDALLAS
 
-    /// <summary>
-    /// Obtiene las medallas del usuario por id. Devuelve una lista con todas las medallas obtenidas.
-    /// Uso: GetMedallas(28, (lista) => { ... });
-    /// </summary>
     public void GetMedallas(int idUsuario, Action<List<MedallaUsuario>> onResult)
     {
         StartCoroutine(GetMedallasCoroutine(idUsuario, onResult));
@@ -234,12 +222,8 @@ public class APIManager : MonoBehaviour
         }
     }
 
-    // ─── PREGUNTAS ──────────────────────────────────────────────
+    //  PREGUNTAS 
 
-    /// <summary>
-    /// Obtiene las preguntas del minijuego El Risco. Devuelve una lista de PreguntaData.
-    /// Uso: GetPreguntas((lista) => { ... });
-    /// </summary>
     public void GetPreguntas(Action<List<PreguntaData>> onResult)
     {
         StartCoroutine(GetPreguntasCoroutine(onResult));
