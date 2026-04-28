@@ -3591,6 +3591,7 @@ MonoBehaviour:
   delayToShow: 2
   chainSystem: {fileID: 0}
   gameTimer: {fileID: 0}
+  apiManager: {fileID: 0}
 --- !u!4 &1455870827
 Transform:
   m_ObjectHideFlags: 0
