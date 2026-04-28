@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 public class APIManager : MonoBehaviour
 {
-    string BaseUrl = "https://127.0.0.1:3000";
+    string BaseUrl = "http://127.0.0.1:3000";
 
     // ─── MODELOS ────────────────────────────────────────────────
 

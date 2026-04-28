@@ -17,7 +17,7 @@ public class PlayerStatsManager : MonoBehaviour
 
     IEnumerator GetPuntaje()
     {
-        string JSONurl = "https://127.0.0.1:3000/puntaje/3";
+        string JSONurl = "http://127.0.0.1:3000/puntaje/3";
 
         UnityWebRequest web = UnityWebRequest.Get(JSONurl); 
         web.certificateHandler = new ForceAcceptAll(); 
