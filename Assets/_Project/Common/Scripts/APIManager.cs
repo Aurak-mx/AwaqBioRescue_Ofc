@@ -74,7 +74,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator LoginCoroutine(string username, string password, Action<UsuarioResponse> onResult)
     {
-        string endpoint = $"https://10.14.255.42:3000/obtenerUsuarioPorNombre";
+        string endpoint = $"https://skillful-geranium-undergo.ngrok-free.dev/obtenerUsuarioPorNombre";
 
         // 1) Buscamos el usuario por nombre
         var reqBody = new LoginRequest { username = username };
@@ -86,6 +86,7 @@ public class APIManager : MonoBehaviour
             web.uploadHandler   = new UploadHandlerRaw(bodyRaw);
             web.downloadHandler = new DownloadHandlerBuffer();
             web.SetRequestHeader("Content-Type", "application/json");
+            web.SetRequestHeader("ngrok-skip-browser-warning", "true");
             web.certificateHandler = new ForceAcceptAll();
 
             yield return web.SendWebRequest();
@@ -138,7 +139,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator PostMedallaCoroutine(int _id_usuario, int _id_medalla, int id_rankmedalla)
     {
-        string endpoint = $"https://10.14.255.42:3000/PostMedalla";
+        string endpoint = $"https://skillful-geranium-undergo.ngrok-free.dev/PostMedalla";
 
         var medalla = new Medalla
         {
@@ -155,6 +156,7 @@ public class APIManager : MonoBehaviour
             web.uploadHandler   = new UploadHandlerRaw(bodyRaw);
             web.downloadHandler = new DownloadHandlerBuffer();
             web.SetRequestHeader("Content-Type", "application/json");
+            web.SetRequestHeader("ngrok-skip-browser-warning", "true");
             web.certificateHandler = new ForceAcceptAll();
 
             yield return web.SendWebRequest();
@@ -175,10 +177,11 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetPuntajeCoroutine(int idUsuario, Action<List<PuntajeItem>> onResult)
     {
-        string endpoint = $"https://10.14.255.42:3003/puntaje/{idUsuario}";
+        string endpoint = $"https://skillful-geranium-undergo.ngrok-free.dev/puntaje/{idUsuario}";
 
         UnityWebRequest web = UnityWebRequest.Get(endpoint);
         web.certificateHandler = new ForceAcceptAll();
+        web.SetRequestHeader("ngrok-skip-browser-warning", "true");
         yield return web.SendWebRequest();
 
         if (web.result != UnityWebRequest.Result.Success)
@@ -203,10 +206,11 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetMedallasCoroutine(int idUsuario, Action<List<MedallaUsuario>> onResult)
     {
-        string endpoint = $"https://10.14.255.42:3001/medallas/{idUsuario}";
+        string endpoint = $"https://skillful-geranium-undergo.ngrok-free.dev/medallas/{idUsuario}";
 
         UnityWebRequest web = UnityWebRequest.Get(endpoint);
         web.certificateHandler = new ForceAcceptAll();
+        web.SetRequestHeader("ngrok-skip-browser-warning", "true");
         yield return web.SendWebRequest();
 
         if (web.result != UnityWebRequest.Result.Success)
@@ -231,10 +235,11 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetPreguntasCoroutine(Action<List<PreguntaData>> onResult)
     {
-        string endpoint = $"https://10.14.255.42:3001/unity/preguntas";
+        string endpoint = $"https://skillful-geranium-undergo.ngrok-free.dev/unity/preguntas";
 
         UnityWebRequest web = UnityWebRequest.Get(endpoint);
         web.certificateHandler = new ForceAcceptAll();
+        web.SetRequestHeader("ngrok-skip-browser-warning", "true");
         yield return web.SendWebRequest();
 
         if (web.result != UnityWebRequest.Result.Success)
